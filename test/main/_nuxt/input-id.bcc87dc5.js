@@ -1,1 +1,0 @@
-import{c as n,K as e}from"./entry.35cb4625.js";let u=0;function r(t){return n(()=>(typeof t=="function"?t():e(t)?t.value:t)??`ninja-input-${++u}`)}export{r as u};

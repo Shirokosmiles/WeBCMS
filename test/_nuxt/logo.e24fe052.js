@@ -1,1 +1,0 @@
-import"./entry.35cb4625.js";const s=""+globalThis.__publicAssetsURL("logo.png");export{s as _};

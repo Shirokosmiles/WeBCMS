@@ -1,1 +1,0 @@
-import{_ as o}from"./_plugin-vue_export-helper.c27b6911.js";import{o as e,a as c}from"./entry.35cb4625.js";const n={},t={class:"nui-placeload animate-nui-placeload"};function _(a,r){return e(),c("div",t)}const l=o(n,[["render",_]]);export{l as _};
