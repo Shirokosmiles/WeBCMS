@@ -56,8 +56,8 @@ $fortuneItems = $store->get_fortune_items_with_details();
                                     <?php for ($j = 0; $j < 2; $j++): ?>
                                         <?php if (isset($fortuneItems[$i + $j])): ?>
                                             <div class="bg-white p-2 rounded shadow">
-                                                <a href='<?= $translations['wowhead_item'] ?><?= htmlspecialchars($fortuneItems[$i + $j]['item_id']) ?>' data-wh-icon-size="slow" data-wh-rename-link="true" target='_blank'>
-                                                    <span class="tooltiptext"></span>
+                                                <a href='https://www.wowhead.com/wotlk/ru/item=<?= htmlspecialchars($fortuneItems[$i + $j]['item_id']) ?>' data-wh-icon-size="slow" data-wh-rename-link="false" target='_blank'>
+                                                    <span class="tooltiptext"><?= htmlspecialchars($fortuneItems[$i + $j]['title']) ?></span>
                                                 </a>
                                             </div>
                                         <?php endif; ?>

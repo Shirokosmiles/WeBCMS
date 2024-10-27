@@ -42,12 +42,6 @@
  
 
     <div class="hero min-h-screen hero1">
-         <div class="video-header">
-        <video autoplay loop muted class="video-header__player">
-            <source src="<?= $template_path ?>images/video/lich.webm" type="video/mp4">
-            <source src="<?= $template_path ?>images/video/lich.webm" type="video/webm">
-        </video>
-    </div>
     <div class="hero-overlay bg-opacity-70"></div>
     <div class="container">
         <div class="row">
@@ -205,7 +199,7 @@
                                     ?>
                                             <tr class="hover:bg-indigo-900/30">
                                                 <td class="text-center text-white"><?= $rank++; ?></td>
-                                                <td class="text-center text-white"><a href="?page=armory&charid=<?= $character['guid']; ?>" class="text-blue-500 hover:underline"><font color="<?= htmlspecialchars($character['class_color']); ?>"><?= htmlspecialchars($character['name']); ?></font></a></td>
+                                                <td class="text-center text-white"><font color="<?= htmlspecialchars($character['class_color']); ?>"><?= htmlspecialchars($character['name']); ?></font></td>
                                                 <td class="text-center text-white">
                                                 <div class="tooltip" data-tip="<?= htmlspecialchars($character['faction_text']); ?> - <?= htmlspecialchars($character['class_name']); ?> - <?= htmlspecialchars($character['race_name']); ?>">
                                                     <img class="h-5 inline" src="<?= htmlspecialchars($character['faction']); ?>" />
@@ -260,7 +254,7 @@
                                     ?>
                                 <tr class="hover:bg-indigo-900/30">
                                     <td class="text-center text-white"><?= $rank++; ?></td>
-                                    <td class="text-center text-white"><a href="?page=armory&charid=<?= $character['guid']; ?>" class="text-blue-500 hover:underline"><font color="<?= htmlspecialchars($character['class_color']); ?>"><?= htmlspecialchars($character['name']); ?></font></a></td>
+                                    <td class="text-center text-white"><font color="<?= htmlspecialchars($character['class_color']); ?>"><?= htmlspecialchars($character['name']); ?></font></td>
                                     <td class="text-center text-white">
                                     <div class="tooltip" data-tip="<?= htmlspecialchars($character['faction_text']); ?> - <?= htmlspecialchars($character['class_name']); ?> - <?= htmlspecialchars($character['race_name']); ?>">
                                         <img class="h-5 inline" src="<?= htmlspecialchars($character['faction']); ?>" />

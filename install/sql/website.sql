@@ -1,3 +1,9 @@
+/*
+ * OneGoCMS
+ *
+ * @author A-WoW
+ * @copyright Copyright (c) 2024, OneGoCMS (https://github.com/WarCraftCMS/OneGoCMS)
+*/
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -7,17 +13,6 @@ CREATE TABLE `access`  (
   `account_id` int NULL DEFAULT 0,
   `access_level` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
-CREATE TABLE `bag_account`  (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `account_id` int UNSIGNED NOT NULL,
-  `item_id` int UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_account`(`account_id` ASC) USING BTREE,
-  INDEX `fk_item`(`item_id` ASC) USING BTREE,
-  CONSTRAINT `fk_account` FOREIGN KEY (`account_id`) REFERENCES `users` (`account_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `fk_item` FOREIGN KEY (`item_id`) REFERENCES `fortune_items` (`item_id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 CREATE TABLE `cart`  (
@@ -33,6 +28,7 @@ CREATE TABLE `cart`  (
   CONSTRAINT `FK_users_user_id_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '0',
@@ -60,20 +56,11 @@ CREATE TABLE `donate_logs`  (
   `total` decimal(10, 2) NOT NULL,
   `create_time` datetime NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0,
+  `points_credited` tinyint(1) NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `user_id`(`user_id` ASC) USING BTREE,
+  INDEX `user_id`(`user_id`) USING BTREE,
   CONSTRAINT `donate_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
-CREATE TABLE `fortune_items`  (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `item_id` int UNSIGNED NOT NULL,
-  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `donor_chance` int UNSIGNED NOT NULL DEFAULT 0,
-  `vote_chance` int UNSIGNED NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `item_id`(`item_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 CREATE TABLE `languages`  (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -81,11 +68,11 @@ CREATE TABLE `languages`  (
   `is_active` tinyint(1) NOT NULL DEFAULT 0,
   `image_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `lang_code`(`lang_code` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  UNIQUE INDEX `lang_code`(`lang_code`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
-INSERT INTO `languages` VALUES (1, 'en', 0, '../uploads/news/66cef5cb869751574629041_screenshot_3.webp');
-INSERT INTO `languages` VALUES (2, 'ru', 0, '../uploads/news/66cef5cb869751574629041_screenshot_3.webp');
+INSERT INTO `languages` VALUES (1, 'en', 1, '../assets/images/en.svg');
+INSERT INTO `languages` VALUES (2, 'ru', 0, '../assets/images/ru.svg');
 
 CREATE TABLE `news`  (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -151,8 +138,8 @@ CREATE TABLE `templates`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `template_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `template_name`(`template_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  UNIQUE INDEX `template_name`(`template_name`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 INSERT INTO `templates` VALUES (1, 'onego');
 
@@ -161,8 +148,7 @@ CREATE TABLE `users`  (
   `account_id` int UNSIGNED NOT NULL,
   `vote_points` int NULL DEFAULT NULL,
   `donor_points` int NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `account_id`(`account_id` ASC) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 CREATE TABLE `vote_sites`  (
@@ -181,7 +167,4 @@ CREATE TABLE `votes`  (
   `vote_date` date NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `unique_vote`(`user_id` ASC, `site` ASC, `vote_date` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
-
-SET FOREIGN_KEY_CHECKS = 1;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;

@@ -50,208 +50,81 @@ if (file_exists($lang_file)) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="../assets/css/backend.css">
-    <link rel="stylesheet" href="../assets/css/dashlite.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <script src="../assets/js/all.js" ></script>
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <script src="../assets/js/jquery-2.1.1.min.js"></script>
-    <script src="../assets/js/ckeditor.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N5B4KFFK9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7N5B4KFFK9');
-</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ панель</title>
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <script src="../../assets/ckeditor/ckeditor.js"></script>
+  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
-    <body class="nk-body bg-lighter npc-general has-sidebar ">
-   <div class="nk-app-root">
-        <!-- main @s  -->
-        <div class="nk-main ">
-            <!-- sidebar @s  -->
-            <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
-                <div class="nk-sidebar-element nk-sidebar-head">
-                    <div class="nk-sidebar-brand">
-                        <a href="/admin" class="logo-link nk-sidebar-logo">
-                            <img class="logo-light logo-img" src="../assets/images/wow-logo-white.png" srcset="../assets/images/wow-logo-white.png 2x" alt="logo">
-                            <img class="logo-dark logo-img" src="../assets/images/wow-logo-white.png" srcset="../assets/images/wow-logo-white.png 2x" alt="logo-dark">
-                        </a>
-                    </div>
-                    <div class="nk-menu-trigger mr-n2">
-                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
-                    </div>
-                </div>
-                <!-- .nk-sidebar-element -->
-                <div class="nk-sidebar-element">
-                    <div class="nk-sidebar-content">
-                        <div class="nk-sidebar-menu" data-simplebar>
-                            <ul class="nk-menu">
-                                    <li class="nk-menu-heading">
-                                        <h6 class="overline-title text-primary-alt"><?= $translations['contents'] ?></h6>
-                                    </li>
-                                    <!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="/admin/?page=dashboard" class="nk-menu-link ">
-                                            <span class="nk-menu-text"><i class="fas fa-bars"></i> <?= $translations['general'] ?></span>
-                                        </a>
-                                    </li>
-
-                                    <!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="/admin/?page=news" class="nk-menu-link ">
-                                            <span class="nk-menu-text"><i class="fas fa-news"></i>&nbsp;<?= $translations['news'] ?></span>
-                                            <span class="nk-menu-badge"><?php echo $stats->total_news(); ?></span>
-                                        </a>
-                                    </li>
-
-
-                                    
-                                <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt"><?= $translations['tools'] ?></h6>
-                                </li>
-
-                                                            <!-- .nk-menu-item -->
-                                <li class="nk-menu-item has-sub">
-                                    <a href="/admin/?page=accounts" class="nk-menu-link" data-original-title="" title="">
-                                        <span class="nk-menu-text"><i class="fas fa-users"></i>&nbsp;<?= $translations['user'] ?></span>
-                                        <span class="nk-menu-badge"><?php echo $stats->total_accounts(); ?></span>
-                                    </a>
-                                    <!-- .nk-menu-sub -->
-                                </li>
-
-                                <li class="nk-menu-item has-sub">
-                                    <a href="/admin/?page=votes" class="nk-menu-link" data-original-title="" title="">
-                                        <span class="nk-menu-text"><i class="fas fa-vote-yea"></i>&nbsp;<?= $translations['vote'] ?></span>
-                                        <span class="nk-menu-badge"></span>
-                                    </a>
-                                    <!-- .nk-menu-sub -->
-                                </li>
-                                <li class="nk-menu-item has-sub">
-                                    <a href="/admin/?page=tickets" class="nk-menu-link" data-original-title="" title="">
-                                        <span class="nk-menu-text"><?= $translations['tickets'] ?></span>
-                                        <span class="nk-menu-badge"></span>
-                                    </a>
-                                    <!-- .nk-menu-sub -->
-                                </li>
-                                <!-- .nk-menu-item -->
-                            </ul><!-- .nk-menu -->
-                        </div><!-- .nk-sidebar-menu -->
-                    </div><!-- .nk-sidebar-content -->
-                </div><!-- .nk-sidebar-element -->
-
-
-            </div>
-            <!-- sidebar @e  -->
-            <!-- wrap @s  -->
-            <div class="nk-wrap ">
-                <!-- main header @s  -->
-                <div class="nk-header nk-header-fixed is-light">
-                    <div class="container-fluid">
-                        <div class="nk-header-wrap">
-                            <div class="nk-menu-trigger d-xl-none ml-n1">
-                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                            </div>
-                            <div class="nk-header-brand d-xl-none">
-                                <a href="/backend" class="logo-link">
-                                    <img class="logo-light logo-img" src="../assets/images/wow-logo-white.png" srcset="../assets/images/wow-logo-white.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="../assets/images/wow-logo-white.png" srcset="../assets/images/wow-logo-white.png 2x" alt="logo-dark">
-                                    <span class="nio-version">General</span>
-                                </a>
-                            </div><!-- .nk-header-brand -->
-                            <div class="nk-header-news d-none d-xl-block">
-                            <div class="nk-news-list">
-                            <div class="nk-news-text"><?= $translations['announce'] ?>
-                            <button class="close" data-dismiss="alert"></button>
-                           </div>
-                           </div>
-                           </div>
-
-                            <div class="nk-header-tools">
-
-                                <ul class="nk-quick-nav">
-
-                                <li class="dropdown user-dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <div class="user-toggle">
-            <img class="user-avatar sm" src="../assets/images/1.png">
-            <div class="user-info d-none d-md-block">
-                                    <div class="user-status"><?= $translations['rank_adm'] ?></div>
-                                <div class="user-name"><?= $_SESSION['username'] ?></div>
-            </div>
-        </div>
-    </a>
-    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
-        <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
-            <div class="user-card">
-                <img class="user-avatar" src="../assets/images/1.png">
-                <div class="user-info">
-                    <span class="lead-text"><?= $_SESSION['username'] ?></span>
-                    <span class="sub-text"><?= $_SESSION['Email'] ?></span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="dropdown-inner">
-            <ul class="link-list">
-                <li><a href="/?page=home"><span><?= $translations['web'] ?></span></a></li>
-                <li><a href="/admin/?page=logout"><span><?= $translations['logout'] ?></span></a></li>
-            </ul>
-        </div>
+<body>
+ <div class="sidebar">
+    <div class="logo_details">
+      <i class='bx bx-code-alt'></i>
+      <div class="logo_name">
+        Менюшка
+      </div>
     </div>
-</li>
+  <ul>
+<?php
+$conn = mysqli_connect("$db_host", "$db_username", "$db_password", "$db_website");
+if (!$conn) {
+  die("Ошибка: " . mysqli_connect_error());
+}
 
-<li class="langs">               
-    <?php
-    $languages = $stats->get_languages();
-    echo '<div class="languages" style="margin-left: 18px;">';
+$sql = "SELECT * FROM menu_admin";
+if($result = mysqli_query($conn, $sql))
+{
+    $rowsCount = ($result);
+  echo "<li class='nk-menu-item'>";
+    foreach($result as $row){
 
-    foreach ($languages as $language) {
-        $isActive = $language['is_active'] ? 'Да' : 'Нет';
-        $newStatus = $language['is_active'] ? 0 : 1;
+echo "<li>
+        <a href='$row[link]' class='$row[class]'>
+          <i class='bx $row[icon]'></i>
+          <span class='links_name'>
+            $row[name]
+          </span>
+        </a>
+      </li>";
+          }
+        echo"</li>";
+    $result->free();
+} 
+else{
+    echo "Ошибка: " . $conn->error;
+}
+$conn->close();
+?>
+<li class="login">
+        <a href="#">
+          <span class="links_name login_out">
+            Login Out
+          </span>
+          <i class='bx bx-log-out' id="log_out"></i>
+        </a>
+      </li>
+    </ul>
+</div>
+  <!-- End Sideber -->
+<section class="home_section">
 
-        $buttonText = $language['is_active'] ? 'Отключить язык' : 'Включить язык';
-
-        if (!empty($language['image_path']) && file_exists($language['image_path'])) {
-            echo '<form method="post" action="" style="display: inline;" onsubmit="return confirm(Вы уверены, что хотите ' . ($language['is_active'] ? 'отключить' : 'включить') . ' язык ' . htmlspecialchars($language['lang_code']) . '?);">';
-            echo '<input type="hidden" name="lang_code" value="' . htmlspecialchars($language['lang_code']) . '">';
-            echo '<input type="hidden" name="new_status" value="' . $newStatus . '">';
-            echo '<a href="#" onclick="this.closest(\'form\').submit(); return false;">';
-            echo '<img src="' . htmlspecialchars($language['image_path']) . '" alt="' . htmlspecialchars($language['lang_code']) . ' flag" style="width: 25px; height: 25px;" title="' . $buttonText . '">';
-            echo '</a>';
-            echo '</form>';
-        }
-    }
-
-    echo '</div>';
-    ?>
-    </li>
-                                </ul><!-- .nk-quick-nav -->
-                            </div><!-- .nk-header-tools -->
-                        </div><!-- .nk-header-wrap -->
-                    </div><!-- .container-fliud -->
-                </div>
-                <!-- main header @e  -->
-
-                <!-- content @s  -->
-                <div class="nk-content ">
-                    <div class="container-fluid">
-                        <div class="nk-content-inner">
-            <?php
+    <div class="topbar">
+      <div class="toggle">
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <div class="user_wrapper">
+        <img src="../assets/img/user.jpg" alt="">
+      </div>
+    </div>
+    <!-- End Top Bar -->
+  <?php
 
             if (file_exists('pages/' . $page . '.php')) {
                 include 'pages/' . $page . '.php';
@@ -259,64 +132,25 @@ if (file_exists($lang_file)) {
                 include 'pages/404.php';
             }
             ?>
+  </section>
 
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
 
-    <!-- .nk-block -->
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      // call function
+      changeBtn();
+    });
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- content @e  -->
-
-
-
-                <!-- footer @s  -->
-                <div class="nk-footer">
-                    <div class="container-fluid">
-                        <div class="nk-footer-wrap">
-                            <div class="nk-footer-copyright"> &copy; 2024 <a href="https://wow.net.kg" title="" target="_blank" rel="dofollow">OneGo WoW</a> by <a href="https://wow.net.kg" title="Website development / Разработка сайта — Aizen" target="_blank" rel="dofollow">Aizen</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- footer @e  -->
-            </div>
-            <!-- wrap @e  -->
-        </div>
-        <!-- main @e  -->
-    </div>
-    <!-- app-root @e  -->
-
-
-
-    </body>
-        <script>
-        $(document).ready(function() {
-            $("#color_mode").on("change", function () {
-                if($(this).prop("checked") == true){
-                    //window.location.href = 'https://wow.wizardcp.com/settheme/dark';
-                    $.get('/settheme/dark');
-                    $('link[href="assets/css/theme.css"]').attr('href', 'assets/css/backend-dark.css?ver=2');
-                }
-                else if($(this).prop("checked") == false){
-                    //window.location.href = 'https://wow.wizardcp.com/settheme/light';
-                    $.get('/settheme/light');
-                    $('link[href="assets/css/backend-dark.css?ver=2"]').attr('href', 'assets/css/theme.css');
-                }
-            })
-        });
-    </script>
-
-
-
-<!-- JavaScript -->
-<script src="../assets/js/bundle.js?ver=1.0.0"></script>
-<script src="../assets/js/scripts.js?ver=1.0.0"></script>
-<script src="../assets/js/charts/gd-general.js?ver=1.0.0"></script>
-
-
-
-
-
+    function changeBtn() {
+      if(sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
 </body>
+</html>

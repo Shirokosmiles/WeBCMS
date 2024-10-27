@@ -13,6 +13,7 @@ class Account
         $config = new Configuration();
         $this->connection = $config->getDatabaseConnection('auth');
         $this->website = $config->getDatabaseConnection('website');
+        $this->character_connection = $config->getDatabaseConnection('characters');
 
         $this->vote_sites = $this->load_vote_sites();
     }
@@ -67,10 +68,10 @@ class Account
     public function get_rank()
     {
         $account = $this->get_account();
-        $stmt = $this->website->prepare("SELECT access_level FROM access WHERE account_id = ?");
+        $stmt = $this->connection->prepare("SELECT gmlevel FROM account_access WHERE id = ?");
         
         if (!$stmt) {
-            die("Ошибка подготовки базы данных: " . $this->website->error);
+            die("Ошибка подготовки базы данных: " . $this->connection->error);
         }
 
         $stmt->bind_param("i", $account['id']);
@@ -79,7 +80,7 @@ class Account
         $row = $result->fetch_assoc();
         $stmt->close();
 
-        return $row ? $row['access_level'] : 'Player';
+        return $row ? $row['gmlevel'] : 'Player';
     }
 
     private function load_vote_sites()

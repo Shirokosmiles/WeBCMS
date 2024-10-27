@@ -1,0 +1,1 @@
+import{r as e,P as t,Q as r,c as s}from"./entry.35cb4625.js";const n=/Mac|iP/;function o(){const a=e(!1);return t(()=>{n.test(navigator.platform)&&(a.value=!0)}),r(a)}function u(){const a=o();return s(()=>a.value?"вЊ":"ctrl")}export{u as a,o as u};

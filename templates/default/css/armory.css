@@ -1,0 +1,1930 @@
+            div.profile {
+                background-color: transparent;
+                background-position: top;
+                background-repeat: no-repeat;
+                display: block;
+                font-family: Verdana,Arial,Helvetica,sans-serif;
+                height: auto;
+                position: relative;
+                width: 100%
+            }
+
+            div.profile * {
+                box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                line-height: 1.5;
+                position: relative
+            }
+
+            .profile a {
+                color: #a4492c
+            }
+
+            .profile a:hover {
+                color: #c35633
+            }
+
+            .profile .pull_left {
+                float: left
+            }
+
+            .profile .pull_right {
+                float: right
+            }
+
+            .profile .self_clear:after {
+                clear: both;
+                content: "";
+                display: block;
+                font-size: 0;
+                height: 0;
+                visibility: hidden
+            }
+
+            .profile:before {
+                background-color: transparent;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .profile.faction_horde:before {
+                background-image: url(images/crest-horde.png)
+            }
+
+            .profile.faction_alliance:before {
+                background-image: url(images/crest-alliance.png)
+            }
+
+            .profile:after {
+                background-color: transparent;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                content: "";
+                filter: alpha(opacity=40);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+                height: 100%;
+                left: 0;
+                opacity: .4;
+                -moz-opacity: .4;
+                -khtml-opacity: .4;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .zone_theexodar:after {
+                background-image: url(images/zone_exodar.png)
+            }
+
+            .zone_ironforge:after {
+                background-image: url(images/zone_ironforge.png)
+            }
+
+            .zone_darnassus:after {
+                background-image: url(images/zone_darnassus.png)
+            }
+
+            .zone_orgrimmar:after {
+                background-image: url(images/zone_orgrimmar.png)
+            }
+
+            .zone_stormwind:after {
+                background-image: url(images/zone_stormwind.png)
+            }
+
+            .zone_undercity:after {
+                background-image: url(images/zone_undercity.png)
+            }
+
+            .zone_silvermoon:after {
+                background-image: url(images/zone_silvermoon.png)
+            }
+
+            .zone_deathknight:after {
+                background-image: url(images/zone_deathknight.png)
+            }
+
+            .zone_thunderbluff:after {
+                background-image: url(images/zone_thunderbluff.png)
+            }
+
+            .profile.faction_horde .info_realm {
+                color: #b30000
+            }
+
+            .profile.faction_alliance .info_realm {
+                color: #0078ff
+            }
+
+            .profile.minimal .minimal_shadow {
+                background: linear-gradient(180deg,rgba(0,0,0,.15) 0,transparent);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26000000",endColorstr="#00000000",GradientType=0);
+                height: 70%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 22%;
+                z-index: 9
+            }
+
+            .profile.minimal .info_row {
+                padding: 45px 20px 0;
+                text-align: center;
+                top: 30px;
+                width: 22%
+            }
+
+            .profile.minimal .info_row .info_profile .info_name {
+                font-size: 25px;
+                line-height: 25px
+            }
+
+            .profile.minimal .info_row .info_profile .info_level_realm .info_level,.profile.minimal .info_row .info_profile .info_level_realm .info_realm {
+                display: block
+            }
+
+            .profile.minimal .info_row .info_profile .info_achievementPoints {
+                color: #fff;
+                padding: 0 5px 0 0
+            }
+
+            .profile.minimal .info_row .info_profile .info_achievementPoints:after {
+                background-color: transparent;
+                background-image: url(../images/achievement.gif);
+                background-position: 100%;
+                background-repeat: no-repeat;
+                content: "";
+                display: inline-block;
+                height: 13px;
+                position: relative;
+                right: -5px;
+                top: 0;
+                vertical-align: middle;
+                width: 9px
+            }
+
+            .profile.minimal .armory_row {
+                background: none;
+                padding: 50px 0
+            }
+
+            .profile.minimal .armory_row .armory_menu {
+                padding: 0 0 0 40px;
+                width: 22%
+            }
+
+            .profile.minimal .armory_row .armory_tabs {
+                padding: 0 40px;
+                top: -150px;
+                width: 78%
+            }
+
+            .profile_row {
+                display: block;
+                height: auto;
+                width: 100%;
+                z-index: 9
+            }
+
+            .info_row {
+                font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+                font-size: 12px;
+                height: 122px;
+                letter-spacing: -.05em;
+                padding: 45px 40px 0
+            }
+
+            .info_row .info_profile .info_name {
+                color: #d8d0c5;
+                font-size: 56px;
+                font-weight: 700;
+                letter-spacing: -.05em;
+                line-height: 55px;
+                text-shadow: 0 0 16px rgba(0,0,0,.3),2px 2px 0 rgba(0,0,0,.3)
+            }
+
+            .info_row .info_profile .info_title_guild {
+                margin: 11px 0 0 11px
+            }
+
+            .info_row .info_profile .info_title_guild .info_title {
+                color: #a3a1a4;
+                font-size: 14px;
+                line-height: 14px;
+                text-shadow: 0 0 16px rgba(0,0,0,.3),2px 2px 0 rgba(0,0,0,.3)
+            }
+
+            .info_row .info_profile .info_title_guild .info_guild {
+                font-size: 20px
+            }
+
+            .info_row .info_profile .info_level_realm {
+                font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+                font-size: 14px;
+                letter-spacing: normal
+            }
+
+            .info_row .info_profile .info_level_realm .info_level b {
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+                font-weight: 700
+            }
+
+            .info_row .info_profile .info_level_realm .info_level .comma {
+                color: #ccc
+            }
+
+            .info_row .info_ilevel {
+                margin: 14px 0 0;
+                text-shadow: 0 0 16px rgba(0,0,0,.3),2px 2px 0 rgba(0,0,0,.3)
+            }
+
+            .info_row .info_ilevel .info_avgilvl {
+                color: #d8d0c5;
+                font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+                font-size: 40px;
+                font-weight: 900;
+                letter-spacing: -.025em;
+                line-height: 40px
+            }
+
+            .info_row .info_ilevel .info_avgilvl_eq {
+                color: #a3a1a4;
+                font-size: 12px;
+                letter-spacing: .001em;
+                margin: 2px 0 0 5px;
+                white-space: nowrap
+            }
+
+            .armory_row {
+                background-color: transparent;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                min-height: 628px;
+                padding: 50px 40px
+            }
+
+            .armory_row .armory_menu {
+                width: 20%
+            }
+
+            .armory_row .armory_menu #armory_menu {
+                margin: 65px 0 0
+            }
+
+            .armory_row .armory_menu #armory_menu li:before {
+                background: linear-gradient(90deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.17) 17%,rgba(0,0,0,.07) 43%,rgba(0,0,0,.03) 58%,transparent);
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33000000",endColorstr="#00000000",GradientType=1);
+                height: 2px;
+                left: 0;
+                position: absolute;
+                top: -1px;
+                width: 100%
+            }
+
+            .armory_row .armory_menu #armory_menu li.first:before {
+                display: none
+            }
+
+            .armory_row .armory_menu #armory_menu li a {
+                color: #ffb100;
+                display: inline-block;
+                padding: 8px 0
+            }
+
+            .armory_row .armory_menu #armory_menu li a:hover {
+                color: #fff
+            }
+
+            .armory_row .armory_menu #armory_menu li a.active {
+                color: #fff;
+                cursor: default;
+                font-weight: 700
+            }
+
+            .armory_row .armory_menu #armory_menu li a.disabled {
+                background-color: transparent;
+                background-image: url(images/sidebar-lock.png);
+                background-position: 100% 10px;
+                background-repeat: no-repeat;
+                color: #8b5f03;
+                cursor: help;
+                padding-right: 15px
+            }
+
+            .armory_row .armory_tabs {
+                width: 80%
+            }
+
+            .armory_row .armory_tabs .armory_tab {
+                width: 100%
+            }
+
+            .armory_row .armory_tabs .armory_tab .armory_title {
+                clear: both;
+                color: #b7b7b7;
+                display: block;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+                font-size: 20px;
+                margin: 15px 0;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .inventory_row .inventory_left,.inventory_row .inventory_right {
+                margin: 0 0 -10px
+            }
+
+            .inventory_row .inventory_bottom {
+                margin: 0 -10px 0 0;
+                text-align: center
+            }
+
+            .inventory_row .character_frame {
+                display: block;
+                left: 0;
+                margin: 0 auto;
+                overflow: hidden;
+                position: absolute;
+                right: 0;
+                width: 551px
+            }
+
+            .inventory_row .character_frame .model {
+                overflow: hidden;
+                width: 100%
+            }
+
+            .inventory_row .item-holder {
+                height: 49px;
+                width: 49px
+            }
+
+            .inventory_row .item-holder .item-slot {
+                background-color: transparent;
+                background-image: url(images/item-empty-bg.png);
+                background-repeat: no-repeat;
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                box-shadow: 0 0 8px #000;
+                -moz-box-shadow: 0 0 8px #000;
+                -webkit-box-shadow: 0 0 8px #000;
+                cursor: help;
+                display: block;
+                height: 49px;
+                width: 49px
+            }
+
+            .inventory_row .item-holder .item-slot.empty {
+                filter: alpha(opacity=35);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+                opacity: .35;
+                -moz-opacity: .35;
+                -khtml-opacity: .35
+            }
+
+            .inventory_row .item-holder .item-slot.empty:hover {
+                filter: alpha(opacity=66);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
+                opacity: .66;
+                -moz-opacity: .66;
+                -khtml-opacity: .66
+            }
+
+            .inventory_row .item-holder .item-slot.empty:before {
+                background-color: transparent;
+                background-image: url(images/inventory-slots.png);
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .slot-0,.slot-head {
+                background-position: 1px 1px!important
+            }
+
+            .slot-1,.slot-neck {
+                background-position: 1px -46px!important
+            }
+
+            .slot-2,.slot-shoulders {
+                background-position: 1px -93px!important
+            }
+
+            .slot-3,.slot-body {
+                background-position: 1px -234px!important
+            }
+
+            .slot-4,.slot-chest {
+                background-position: 1px -140px!important
+            }
+
+            .slot-5,.slot-waist {
+                background-position: 1px -375px!important
+            }
+
+            .slot-6,.slot-legs {
+                background-position: 1px -422px!important
+            }
+
+            .slot-7,.slot-feet {
+                background-position: 1px -469px!important
+            }
+
+            .slot-8,.slot-wrists {
+                background-position: 1px -281px!important
+            }
+
+            .slot-9,.slot-hands {
+                background-position: 1px -328px!important
+            }
+
+            .slot-10,.slot-11,.slot-finger1,.slot-finger2 {
+                background-position: 1px -516px!important
+            }
+
+            .slot-12,.slot-13,.slot-trinket1,.slot-trinket2 {
+                background-position: 1px -563px!important
+            }
+
+            .slot-14,.slot-back {
+                background-position: 1px -140px!important
+            }
+
+            .slot-15,.slot-mainhand {
+                background-position: 1px -610px!important
+            }
+
+            .slot-16,.slot-offhand {
+                background-position: 1px -657px!important
+            }
+
+            .slot-17,.slot-ranged {
+                background-position: 1px -704px!important
+            }
+
+            .slot-18,.slot-tabard {
+                background-position: 1px -187px!important
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality {
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                height: 100%;
+                width: 100%
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                z-index: 9
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality a:before {
+                background-color: transparent;
+                background-image: url(images/inventory-slots.png);
+                background-repeat: no-repeat;
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality:hover a:before {
+                background-color: hsla(0,0%,100%,.2)
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality img {
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                height: 100%;
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .inventory_row .item-holder .item-slot .item-quality .item {
+                display: block;
+                height: 100%;
+                width: 100%
+            }
+
+            .quality-0 a:before {
+                background-position: -49px 0!important
+            }
+
+            .quality-1 a:before {
+                background-position: -98px 0!important
+            }
+
+            .quality-2 a:before {
+                background-position: -147px 0!important
+            }
+
+            .quality-3 a:before {
+                background-position: -196px 0!important
+            }
+
+            .quality-4 a:before {
+                background-position: -245px 0!important
+            }
+
+            .quality-5 a:before {
+                background-position: -294px 0!important
+            }
+
+            .quality-6 a:before {
+                background-position: -343px 0!important
+            }
+
+            .quality-7 a:before {
+                background-position: -392px 0!important
+            }
+
+            .inventory_row .item-holder .item-slot .item-transmog {
+                background-color: transparent;
+                background-image: url(images/transmogrify-icon.gif);
+                background-repeat: no-repeat;
+                bottom: 0;
+                height: 17px;
+                position: absolute;
+                width: 17px;
+                z-index: 99
+            }
+
+            .inventory_row .item-holder .item-details {
+                height: 49px;
+                margin: 4px 0;
+                overflow: hidden;
+                width: -webkit-calc(100% - 57px);
+                width: expression(100% - 57px);
+                width: -o-calc(100% - 57px);
+                width: calc(100% - 57px)
+            }
+
+            .inventory_row .item-holder .item-details span {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%
+            }
+
+            .inventory_row .item-holder .item-details .item-name {
+                font-size: 11px;
+                height: 16px
+            }
+
+            .inventory_row .item-holder .item-details .item-name a {
+                color: inherit
+            }
+
+            .inventory_row .item-holder .item-details .item-enchant {
+                color: #1eff00;
+                font-size: 11px;
+                height: 16px
+            }
+
+            .inventory_row .item-holder .item-details .item-level {
+                bottom: 0;
+                color: #999;
+                font-size: 10px;
+                height: 15px;
+                position: absolute
+            }
+
+            .inventory_row .inventory_left .item-holder,.inventory_row .inventory_right .item-holder {
+                margin: 0 0 10px
+            }
+
+            .inventory_row .inventory_bottom .item-holder {
+                display: inline-block;
+                margin: 0 10px 0 0
+            }
+
+            .inventory_row .inventory_left .item-holder .item-slot .item-transmog {
+                background-position: 0 100%;
+                left: 0
+            }
+
+            .inventory_row .inventory_left .item-holder .item-slot .item-transmog:hover {
+                background-position: 100% 100%
+            }
+
+            .inventory_row .inventory_right .item-holder .item-slot .item-transmog {
+                background-position: 0 0;
+                right: 0
+            }
+
+            .inventory_row .inventory_right .item-holder .item-slot .item-transmog:hover {
+                background-position: 100% 0
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-15 .item-transmog {
+                background-position: 0 0;
+                right: 0
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-15 .item-transmog:hover {
+                background-position: 100% 0
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-16 .item-transmog {
+                background-position: 0 100%;
+                left: 0
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-16 .item-transmog:hover {
+                background-position: 100% 100%
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-17 .item-transmog {
+                background-position: 0 100%;
+                left: 0
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-17 .item-transmog:hover {
+                background-position: 100% 100%
+            }
+
+            .inventory_row .inventory_left .item-holder .item-details {
+                float: left;
+                text-align: left
+            }
+
+            .inventory_row .inventory_right .item-holder .item-details {
+                float: right;
+                text-align: right
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-15+.item-details {
+                float: left;
+                text-align: right
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-16+.item-details {
+                float: right;
+                text-align: left
+            }
+
+            .inventory_row .inventory_bottom .item-holder .item-slot.slot-17+.item-details {
+                float: right;
+                text-align: left
+            }
+
+            .inventory_row.advanced .inventory_left,.inventory_row.advanced .inventory_right {
+                margin: 0 0 -1px
+            }
+
+            .inventory_row.advanced .inventory_bottom {
+                align-content: stretch;
+                align-items: flex-end;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: auto 0 0;
+                padding: 0 10px
+            }
+
+            .inventory_row.advanced .item-holder {
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                height: 57px;
+                width: 57px
+            }
+
+            .inventory_row.advanced .item-holder .item-slot {
+                margin: 4px
+            }
+
+            .inventory_row.advanced .item-holder .item-details {
+                display: block!important
+            }
+
+            .inventory_row.advanced .inventory_left .item-holder,.inventory_row.advanced .inventory_right .item-holder {
+                margin: 0 0 1px
+            }
+
+            .inventory_row.advanced .inventory_bottom .item-holder {
+                float: left;
+                margin: 0
+            }
+
+            .inventory_row.advanced .inventory_bottom .item-holder+.item-holder {
+                float: left;
+                margin: 0 0 0 10px
+            }
+
+            .inventory_row.advanced .inventory_bottom .item-holder+.item-holder+.item-holder {
+                float: right;
+                margin: 0
+            }
+
+            .inventory_row.advanced .inventory_left .item-holder .item-slot {
+                float: left
+            }
+
+            .inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-15,.inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-mainhand,.inventory_row.advanced .inventory_right .item-holder .item-slot {
+                float: right
+            }
+
+            .inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-16,.inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-17,.inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-offhand,.inventory_row.advanced .inventory_bottom .item-holder .item-slot.slot-ranged {
+                float: left
+            }
+
+            .stats_talents_row {
+                padding: 30px
+            }
+
+            .stats_talents_row .armory_stats {
+                width: 45%
+            }
+
+            .stats_talents_row .armory_stats .stat_bars {
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_bars .stat_bar {
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                height: 30px;
+                line-height: 30px;
+                overflow: hidden;
+                padding: 0 10px;
+                width: 48%
+            }
+
+            .stats_talents_row .armory_stats .stat_bars .stat_bar:before {
+                background: linear-gradient(90deg,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15));
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26ffffff",endColorstr="#26ffffff",GradientType=1);
+                height: 2px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_bars .stat_bar:after {
+                background: linear-gradient(90deg,rgba(0,0,0,.15) 0,rgba(0,0,0,.15));
+                bottom: 0;
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#26000000",endColorstr="#26000000",GradientType=1);
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_bars .stat_bar span {
+                color: #e4e4e4;
+                font-size: 11px;
+                font-weight: 400;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75)
+            }
+
+            .stats_talents_row .armory_stats .stat_bars .stat_bar i {
+                color: #e4e4e4;
+                font-size: 14px;
+                font-style: inherit;
+                font-weight: 700;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75)
+            }
+
+            .bar_health {
+                background: #317217
+            }
+
+            .bar_mana {
+                background: #36698a
+            }
+
+            .bar_rage {
+                background: #a72828
+            }
+
+            .bar_focus {
+                background: #7b4729
+            }
+
+            .bar_energy {
+                background: #a78828
+            }
+
+            .bar_runic {
+                background: #468082
+            }
+
+            .stats_talents_row .armory_stats .stat_tables {
+                background-color: rgba(0,0,0,.1);
+                height: 339px;
+                margin: 23px 0 0;
+                padding: 0 3% 54px 0;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table {
+                height: auto;
+                margin: 3% 0 0 3%;
+                width: 47%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table .stat_title {
+                border-bottom: 1px solid #292929;
+                color: #c1c1c1;
+                font-size: 16px;
+                font-weight: 400;
+                height: auto;
+                padding: 0 6px 12px;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75);
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table ul {
+                height: auto;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table ul li {
+                border-top: 1px solid #232323;
+                height: auto;
+                padding: 10px 6px;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table ul li .stat_name {
+                color: #5f5f5f;
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 400;
+                height: 18px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75);
+                vertical-align: middle;
+                white-space: nowrap;
+                width: 65%
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .stat_table ul li .stat_value {
+                color: #9a9a9a;
+                font-size: 12px;
+                font-weight: 400;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75)
+            }
+
+            .stats_talents_row .armory_stats .stat_tables .show-more {
+                background-color: hsla(0,0%,100%,.03);
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                bottom: 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px 0 hsla(40,24%,73%,.03);
+                -moz-box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px 0 hsla(40,24%,73%,.03);
+                -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px 0 hsla(40,24%,73%,.03);
+                display: block;
+                font-size: 12px;
+                font-weight: 400;
+                height: 34px;
+                margin: 0 0 3% 3%;
+                padding: 8px;
+                position: absolute;
+                text-align: center;
+                text-shadow: 0 1px 1px rgba(12,7,6,.75);
+                width: 94%
+            }
+
+            .stats_talents_row .armory_talents {
+                width: 53%
+            }
+
+            .stats_talents_row .armory_talents .talents_title {
+                color: #c1c1c1;
+                font-family: Tahoma,Verdana,Segoe,sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                padding: 2px 0 25px;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .stats_talents_row .armory_talents .talent_specs {
+                width: 100%
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec {
+                background-color: rgba(0,0,0,.1);
+                border: 1px solid #292829;
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                box-shadow: inset 0 1px 0 hsla(41,21%,70%,.05);
+                -moz-box-shadow: inset 0 1px 0 hsla(41,21%,70%,.05);
+                -webkit-box-shadow: inset 0 1px 0 hsla(41,21%,70%,.05);
+                height: 56px;
+                width: 49.7%
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec.active {
+                box-shadow: inset 0 0 0 1px #2d6a15,inset 0 0 16px rgba(47,109,22,.75);
+                -moz-box-shadow: inset 0 0 0 1px #2d6a15,inset 0 0 16px rgba(47,109,22,.75);
+                -webkit-box-shadow: inset 0 0 0 1px #2d6a15,inset 0 0 16px rgba(47,109,22,.75);
+                cursor: default
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_icon {
+                border: 1px solid #292829;
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                box-shadow: 0 0 6px rgba(12,7,6,.8);
+                -moz-box-shadow: 0 0 6px rgba(12,7,6,.8);
+                -webkit-box-shadow: 0 0 6px rgba(12,7,6,.8);
+                height: 38px;
+                margin: 8px;
+                width: 38px
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_icon span {
+                display: block;
+                height: 100%;
+                width: 100%
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_icon span:before {
+                background: radial-gradient(ellipse at center,rgba(12,7,6,0) 0,rgba(12,7,6,0) 50%,#0c0706 100%);
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000c0706",endColorstr="#0c0706",GradientType=1);
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 9
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_info {
+                height: 42px;
+                margin: 6px 8px;
+                width: auto
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_info .talent_spec_title {
+                color: #b5b5b5;
+                display: block;
+                font-size: 16px;
+                font-weight: 400
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_info .talent_spec_points {
+                color: #929292;
+                display: block;
+                font-size: 12px
+            }
+
+            .stats_talents_row .armory_talents .talent_specs .talent_spec .talent_spec_selected {
+                background-color: transparent;
+                background-image: url(images/talents-check.gif);
+                background-position: 50%;
+                background-repeat: no-repeat;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 40px
+            }
+
+            .armory_boxes_row {
+                padding: 0 30px 30px
+            }
+
+            .armory_boxes_row:before {
+                background-color: #353535;
+                content: "";
+                display: block;
+                height: 2px;
+                margin: 0 auto;
+                position: relative;
+                width: 100%
+            }
+
+            .armory_boxes_row .armory_box {
+                padding: 0 2%
+            }
+
+            .armory_boxes_row .armory_box .box_title {
+                color: #c1c1c1;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 20px;
+                margin: 30px 0 0;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .armory_boxes_row .armory_box .box_body {
+                padding: 30px 0 0
+            }
+
+            .pvp_box {
+                width: 25%
+            }
+
+            .pvp_box .box_body .pvp_row {
+                padding: 10px 0
+            }
+
+            .pvp_box .box_body .pvp_row.first {
+                padding-top: 0
+            }
+
+            .pvp_box .box_body .pvp_row:before {
+                background: linear-gradient(90deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.17) 17%,rgba(0,0,0,.07) 43%,rgba(0,0,0,.03) 58%,transparent);
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33000000",endColorstr="#00000000",GradientType=1);
+                height: 2px;
+                left: 0;
+                position: absolute;
+                top: -1px;
+                width: 100%
+            }
+
+            .pvp_box .box_body .pvp_row.first:before {
+                display: none
+            }
+
+            .pvp_box .box_body .pvp_row .pvp_value {
+                color: #848484;
+                display: block;
+                font-size: 26px;
+                font-weight: 900;
+                line-height: 20px;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .pvp_box .box_body .pvp_row .pvp_name {
+                color: #616161;
+                display: block;
+                font-size: 12px;
+                font-weight: 400;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .pvp_box .box_body .pvp_row.special .pvp_value {
+                color: #c3c3c3
+            }
+
+            .profession_table {
+                margin: 50px 0 20px
+            }
+
+            .prof_box {
+                width: 49.7%
+            }
+
+            .prof_box .box_body .profession_holder {
+                background-color: rgba(0,0,0,.15);
+                border-radius: 2px;
+                -moz-border-radius: 2px;
+                -webkit-border-radius: 2px;
+                box-shadow: .5px .9px 0 hsla(39,18%,49%,.05),inset .5px .9px 1px rgba(0,0,0,.15);
+                -moz-box-shadow: .5px .9px 0 hsla(39,18%,49%,.05),inset .5px .9px 1px rgba(0,0,0,.15);
+                -webkit-box-shadow: .5px .9px 0 hsla(39,18%,49%,.05),inset .5px .9px 1px rgba(0,0,0,.15);
+                display: block;
+                height: 28px;
+                margin: 0 0 10px;
+                overflow: hidden;
+                padding: 1px;
+                width: 100%
+            }
+
+            .prof_box .box_body .profession_holder.empty {
+                color: #252525;
+                line-height: 28px;
+                padding: 0 5px
+            }
+
+            .prof_box .box_body .profession_holder .profession_bar {
+                background-color: #527520;
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                box-shadow: 0 1px 2px rgba(21,14,13,.75),inset 0 -2px 1px rgba(0,0,0,.2),inset 0 2px 0 hsla(0,0%,100%,.1);
+                -moz-box-shadow: 0 1px 2px rgba(21,14,13,.75),inset 0 -2px 1px rgba(0,0,0,.2),inset 0 2px 0 hsla(0,0%,100%,.1);
+                -webkit-box-shadow: 0 1px 2px rgba(21,14,13,.75),inset 0 -2px 1px rgba(0,0,0,.2),inset 0 2px 0 hsla(0,0%,100%,.1);
+                display: block;
+                height: 100%;
+                overflow: hidden;
+                width: auto;
+                z-index: 1
+            }
+
+            .prof_box .box_body .profession_holder:hover .profession_bar {
+                background-color: #618e22
+            }
+
+            .prof_box .box_body .profession_holder .profession_bar:before {
+                background: linear-gradient(180deg,rgba(0,0,0,.1) 0,transparent);
+                content: "";
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a000000",endColorstr="#00000000",GradientType=0);
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%
+            }
+
+            .prof_box .box_body .profession_holder .profession_info {
+                height: 100%;
+                left: 0;
+                padding: 1px;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 9
+            }
+
+            .prof_box .box_body .profession_holder .profession_info .profession_icon {
+                background-size: 100% 100%;
+                border: 1px solid #b5b5b5;
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                box-shadow: 0 0 3px rgba(12,7,6,.75);
+                -moz-box-shadow: 0 0 3px rgba(12,7,6,.75);
+                -webkit-box-shadow: 0 0 3px rgba(12,7,6,.75);
+                height: 20px;
+                margin: 3px;
+                width: 20px
+            }
+
+            .prof_box .box_body .profession_holder .profession_info .profession_name {
+                color: #cecece;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 26px;
+                margin: 0 0 0 3px;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.5)
+            }
+
+            .prof_box .box_body .profession_holder .profession_info .profession_value {
+                color: #dedede;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 26px;
+                margin: 0 3px 0 0;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.5)
+            }
+
+            .achi_box {
+                width: 37.5%
+            }
+
+            .achi_box .box_body .achievements {
+                width: 100%
+            }
+
+            .achi_box .box_body .achievements .achievement {
+                color: #a9a9a9;
+                font-size: 12px;
+                font-weight: 400;
+                margin: 0 0 10px;
+                text-shadow: .5px .9px 1px rgba(12,7,6,.75)
+            }
+
+            .achi_box .box_body .achievements .achievement.first {
+                font-size: 14px
+            }
+
+            .achi_box .box_body .achievements .achievement .achievement_icon {
+                background-size: 100% 100%;
+                border: 1px solid #737373;
+                border-radius: 1px;
+                -moz-border-radius: 1px;
+                -webkit-border-radius: 1px;
+                box-shadow: 0 0 4px rgba(0,0,0,.85);
+                -moz-box-shadow: 0 0 4px rgba(0,0,0,.85);
+                -webkit-box-shadow: 0 0 4px rgba(0,0,0,.85);
+                height: 20px;
+                margin: 0 10px 0 0;
+                width: 20px
+            }
+
+            .achi_box .box_body .achievements .achievement .achievement_desc {
+                display: table-cell;
+                top: -4px;
+                width: 1%
+            }
+
+            .achi_box .box_body .achievements .achievement .achievement_desc .achievement_date {
+                color: #5f5f5f;
+                display: block;
+                font-size: 11px
+            }
+
+            .pvp_tab_row .arena_box {
+                background: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent);
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(0,0%,71%,.03);
+                -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(0,0%,71%,.03);
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(0,0%,71%,.03);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#99000000",endColorstr="#00000000",GradientType=0);
+                min-height: 223px;
+                padding: 20px;
+                width: -webkit-calc(33.33333% - 4px);
+                width: expression(100%/3 - 4px);
+                width: -o-calc(33.33333% - 4px);
+                width: calc(33.33333% - 4px)
+            }
+
+            .pvp_tab_row .arena_box.box-0 {
+                float: left
+            }
+
+            .pvp_tab_row .arena_box.box-1 {
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0
+            }
+
+            .pvp_tab_row .arena_box.box-2 {
+                float: right
+            }
+
+            .pvp_tab_row .arena_box .team-type {
+                color: #9c9c9c;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+                font-size: 36px;
+                font-weight: 900;
+                letter-spacing: -.1em;
+                line-height: 100%
+            }
+
+            .pvp_tab_row .arena_box .team-details {
+                width: 100%
+            }
+
+            .pvp_tab_row .arena_box .team-details li {
+                font-size: 15px;
+                height: 25px;
+                line-height: 25px;
+                text-shadow: 0 1px 1px rgba(0,0,0,.55)
+            }
+
+            .pvp_tab_row .arena_box .team-details li.sep {
+                background: radial-gradient(ellipse at center,hsla(0,0%,100%,.08) 0,transparent 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14ffffff",endColorstr="#00000000",GradientType=1);
+                height: 1px;
+                margin: 10px 0
+            }
+
+            .pvp_tab_row .arena_box .team-details li .player-rating {
+                font-size: 13px;
+                font-weight: 700
+            }
+
+            .pvp_tab_row .arena_box .team-details li .player-wins {
+                color: #159015
+            }
+
+            .pvp_tab_row .arena_box .team-details li .player-loses {
+                color: #b31717
+            }
+
+            .pvp_tab_row .arena_box .team-details li .player-win-ratio {
+                color: #94877f
+            }
+
+            .pvp_tab_row .arena_box .team-details li .team-name {
+                color: #757474;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif
+            }
+
+            .pvp_tab_row .arena_box .team-details li .team-rating i {
+                color: #757474;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+                font-style: inherit
+            }
+
+            .pvp_tab_row .arena_box .team-details li .team-rank {
+                font-size: 13px;
+                font-weight: 700
+            }
+
+            .pvp_tab_row .arena_box .team-details li .team-member {
+                height: 18px;
+                margin: 3.5px 5px 3.5px 0;
+                width: 18px
+            }
+
+            .pvp_tab_row .arena_box .team-details li .team-member img {
+                display: block
+            }
+
+            .pvp_tab_row .pvp_table {
+                width: 100%
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_row {
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(37,27%,59%,.03);
+                -moz-box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(37,27%,59%,.03);
+                -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15),inset 0 1px hsla(37,27%,59%,.03);
+                height: 34px;
+                margin: 6px 0 0;
+                overflow: hidden;
+                width: 100%
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_row .pvp_table_column {
+                float: left;
+                height: 100%;
+                line-height: 34px;
+                padding: 0 8px
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_row .pvp_table_column.name_column {
+                width: 70%
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_row .pvp_table_column.value_column {
+                width: 30%
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_head {
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.15);
+                -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.15);
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.15);
+                height: 34px;
+                width: 100%
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_head .pvp_table_row {
+                background-color: rgba(0,0,0,.5)
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_head .pvp_table_row .pvp_table_column {
+                color: #9e9e9e
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_body .pvp_table_row {
+                background-color: rgba(49,49,49,.2)
+            }
+
+            .pvp_tab_row .pvp_table .pvp_table_body .pvp_table_row .pvp_table_column {
+                color: #a0a0a0
+            }
+
+            .achievements_tab_row .achievements {
+                width: 100%
+            }
+
+            .achievements_tab_row .achievements.all_summary {
+                margin: -1.6%
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary {
+                float: left;
+                height: auto;
+                margin: 1%;
+                width: 30%
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary.wide {
+                width: 94%
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary .summary-label {
+                color: #fff
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary .summary-value {
+                background-color: rgba(0,0,0,.5);
+                border: 1px solid #444;
+                color: #fff;
+                padding: .3rem;
+                text-align: center
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary .summary-value:before {
+                border: 1px solid #444;
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 9
+            }
+
+            .achievements_tab_row .achievements.all_summary .summary .summary-value .value-bar {
+                background-color: hsla(0,0%,100%,.1);
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: auto
+            }
+
+            .achievements_tab_row .achievements .achievement {
+                background-color: rgba(0,0,0,.5);
+                border: 1px solid #444;
+                display: table;
+                height: auto;
+                margin: 0 0 1rem;
+                width: 100%
+            }
+
+            .achievements_tab_row .achievements .achievement.active {
+                border-color: #cba51e
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col {
+                display: table-cell;
+                vertical-align: middle
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col.col-1 {
+                padding: 1rem;
+                width: 1%
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col.col-2 {
+                padding: 0;
+                width: auto
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col.col-3 {
+                padding: 1rem;
+                width: 1%
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-icon {
+                height: 50px;
+                width: 50px
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-icon img {
+                border: 1px solid #444;
+                height: 100%;
+                overflow: hidden;
+                width: 100%
+            }
+
+            .achievements_tab_row .achievements .achievement.active .achievement-col .achievement-icon img {
+                border-color: #cba51e
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-name {
+                background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.1) 50%,hsla(0,0%,100%,0));
+                color: #ffb10a;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#00ffffff",GradientType=1);
+                padding: .5rem;
+                text-align: center;
+                text-shadow: 3px 3px 3px #000
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-desc {
+                margin: .5rem 0 0;
+                padding: .5rem;
+                text-align: center
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-reward {
+                background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.1) 50%,hsla(0,0%,100%,0));
+                color: #fff;
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#00ffffff",GradientType=1);
+                margin: .5rem 0 0;
+                padding: .5rem;
+                text-align: center;
+                text-shadow: 3px 3px 3px #000
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-date {
+                text-align: center
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-points {
+                text-align: center;
+                white-space: nowrap
+            }
+
+            .achievements_tab_row .achievements .achievement .achievement-col .achievement-points:after {
+                background-color: transparent;
+                background-image: url(../images/achievement.gif);
+                background-position: 100%;
+                background-repeat: no-repeat;
+                content: "";
+                display: inline-block;
+                height: 13px;
+                position: relative;
+                right: -3px;
+                top: 0;
+                vertical-align: middle;
+                width: 9px
+            }
+
+            .socket-prismatic {
+                background: url(images/socket-prismatic.gif) no-repeat 0;
+                margin-left: 1px;
+                padding-left: 26px
+            }
+
+            .socket-hydraulic {
+                background: url(images/socket-hydraulic.gif) no-repeat 0;
+                margin-left: 1px;
+                padding-left: 26px
+            }
+
+            .socket-cogwheel {
+                background: url(images/socket-cogwheel.gif) no-repeat 0;
+                margin-left: 1px;
+                padding-left: 26px
+            }
+
+            .icon-frame {
+                background-color: #000;
+                background-position: 1px 1px;
+                background-repeat: no-repeat;
+                border-color: #b1b2b4 #434445 #2f3032;
+                border-radius: 3px;
+                border-style: solid;
+                border-width: 1px;
+                display: inline-block;
+                margin-right: 2px;
+                overflow: hidden;
+                padding: 1px
+            }
+
+            .icon-frame img {
+                display: block;
+                vertical-align: bottom
+            }
+
+            .icon-frame.frame-12 {
+                height: 16px;
+                width: 16px
+            }
+
+            .icon-frame.frame-56 {
+                box-shadow: 0 0 10px #000;
+                height: 56px;
+                width: 56px
+            }
+
+            .wiki-tooltip {
+                max-width: 400px;
+                padding: 3px;
+                position: relative
+            }
+
+            .wiki-tooltip .frame-56 {
+                left: -71px;
+                position: absolute;
+                top: -8px
+            }
+
+            .wiki-tooltip h3 {
+                font-size: 16px;
+                font-weight: 400
+            }
+
+            .wiki-tooltip h3 span {
+                float: right;
+                margin-left: 5px
+            }
+
+            .color-tooltip-yellow {
+                color: #ffd100!important
+            }
+
+            .color-tooltip-red {
+                color: red!important
+            }
+
+            .color-tooltip-green {
+                color: #0f0!important
+            }
+
+            .color-tooltip-blue {
+                color: #71d5ff!important
+            }
+
+            .color-tooltip-beige {
+                color: #ffff98!important
+            }
+
+            .color-tooltip-alliance {
+                color: #247faa
+            }
+
+            .color-tooltip-horde {
+                color: #b30000
+            }
+
+            .color-c1,.color-c1 a {
+                color: #c69b6d!important
+            }
+
+            .color-c2,.color-c2 a {
+                color: #f48cba!important
+            }
+
+            .color-c3,.color-c3 a,.color-g2 {
+                color: #aad372!important
+            }
+
+            .color-c4,.color-c4 a,.color-g1 {
+                color: #fff468!important
+            }
+
+            .color-c5,.color-c5 a {
+                color: #f0ebe0!important
+            }
+
+            .color-c6,.color-c6 a {
+                color: #c41e3b!important
+            }
+
+            .color-c7,.color-c7 a {
+                color: #2359ff!important
+            }
+
+            .color-c8,.color-c8 a,.color-g3 {
+                color: #68ccef!important
+            }
+
+            .color-c9,.color-c9 a {
+                color: #9382c9!important
+            }
+
+            .color-c10,.color-c10 a {
+                color: #00ffba!important
+            }
+
+            .color-c11,.color-c11 a,.color-g4 {
+                color: #ff7c0a!important
+            }
+
+            .meta-socket-requires {
+                padding-left: 27px
+            }
+
+            .iconsmall {
+                height: 26px;
+                margin: 0 auto;
+                position: relative;
+                width: 26px
+            }
+
+            .iconsmall ins {
+                height: 18px;
+                left: 4px;
+                top: 4px;
+                width: 18px;
+                z-index: 5
+            }
+
+            .iconsmall del,.iconsmall ins {
+                background-repeat: no-repeat;
+                display: block;
+                position: absolute
+            }
+
+            .iconsmall del {
+                background-image: url(images/default.png);
+                height: 26px;
+                left: 0;
+                top: 0;
+                width: 26px;
+                z-index: 10
+            }
+
+            .iconsmall a {
+                background: url(images/default_1.png) no-repeat 20px 0;
+                display: block;
+                height: 20px;
+                left: 3px;
+                position: absolute;
+                top: 3px;
+                width: 20px;
+                z-index: 13
+            }
+
+            .iconsmall a:hover {
+                background-position: 0 0
+            }
+
+            @media only screen and (max-width: 1028px) {
+                .inventory_row.advanced .item-holder {
+                    max-width:251px
+                }
+
+                .inventory_row.advanced .inventory_bottom .item-holder {
+                    max-width: 157px
+                }
+            }
+
+            @media only screen and (max-width: 969px) {
+                .inventory_row.advanced .item-holder {
+                    width:auto
+                }
+
+                .inventory_bottom .item-holder {
+                    float: none!important;
+                    width: auto!important
+                }
+
+                .pull_left,.pull_right {
+                    float: none
+                }
+
+                .inventory_row.advanced .item-holder .item-details {
+                    display: none!important
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                .achi_box,.armory_row .armory_menu,.armory_row .armory_tabs,.inventory_row .character_frame,.prof_box,.profile.minimal .armory_row .armory_menu,.profile.minimal .armory_row .armory_tabs,.pvp_box {
+                    top:0;
+                    width: 100%
+                }
+
+                .armory_row .armory_menu #armory_menu {
+                    margin: 0
+                }
+
+                .armory_row .armory_menu #armory_menu li a {
+                    display: block
+                }
+
+                .character_frame .model,.character_frame canvas {
+                    margin: 0 auto
+                }
+
+                .prof-menu {
+                    background: #211510;
+                    border: 1px solid #352011;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin: 10px 0;
+                    padding: 10px 5px;
+                    position: relative;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    user-select: none;
+                    z-index: 5
+                }
+
+                .prof-menu span {
+                    background-color: #ffb100;
+                    display: block;
+                    height: 2px;
+                    position: relative;
+                    transition: all .2s ease-in-out;
+                    width: 15px
+                }
+
+                .prof-menu span:after,.prof-menu span:before {
+                    background-color: #ffb100;
+                    content: "";
+                    height: 2px;
+                    position: absolute;
+                    transition: all .2s ease-in-out;
+                    width: 15px
+                }
+
+                .prof-menu span:before {
+                    top: -4px;
+                    visibility: visible
+                }
+
+                .prof-menu span:after {
+                    top: 4px
+                }
+
+                #armory_menu {
+                    height: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: opacity .15s ease-out
+                }
+
+                .is-active #armory_menu {
+                    background: #211510;
+                    border: 1px solid #352011;
+                    display: block;
+                    height: auto;
+                    opacity: 1;
+                    overflow: none;
+                    padding: 10px;
+                    position: absolute;
+                    width: 100%;
+                    z-index: 99
+                }
+
+                #tooltip {
+                    left: 100px!important;
+                    right: 100px!important
+                }
+            }
+
+            @media only screen and (max-width: 575px) {
+                .armory_boxes_row,.armory_row,.stats_talents_row {
+                    padding:10px
+                }
+
+                .armory_stats,.armory_talents,.info_ilevel,.info_profile,.stat_tables .stat_table {
+                    float: none!important;
+                    width: 100%!important
+                }
+
+                .stats_talents_row .armory_stats .stat_tables {
+                    height: auto
+                }
+
+                .character_frame .model,.character_frame canvas {
+                    width: 100%!important
+                }
+
+                .info_row {
+                    height: auto;
+                    padding: 10px
+                }
+
+                .info_row .info_profile .info_name {
+                    font-size: 30px
+                }
+
+                .info_row .info_profile .info_title_guild .info_guild {
+                    font-size: 15px
+                }
+
+                .info_row .info_ilevel .info_avgilvl {
+                    font-size: 30px
+                }
+
+                .profile.minimal .armory_row,.profile.minimal .info_row {
+                    padding: 10px;
+                    top: 0;
+                    width: 100%
+                }
+
+                .profile.minimal .armory_row .armory_menu {
+                    padding: 0
+                }
+
+                .achievements_tab_row .achievements.all_summary .summary {
+                    width: 100%
+                }
+
+                .achievements_tab_row .achievements .achievement {
+                    display: inherit
+                }
+
+                .achievements_tab_row .achievements .achievement .achievement-col {
+                    display: block;
+                    width: 100%
+                }
+
+                #tooltip {
+                    left: 50px!important;
+                    position: fixed;
+                    right: 50px!important;
+                    top: 50%!important;
+                    transform: translateY(-50%);
+                    z-index: 999999!important
+                }
+            }

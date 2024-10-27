@@ -7605,10 +7605,6 @@ html:has(.drawer-open.drawer-open) {
     display: grid
 }
 
-.grid-shop {
-    display: ruby;
-}
-
 .inline-grid {
     display: inline-grid
 }

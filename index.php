@@ -62,9 +62,16 @@ $_SESSION['lang'] = $lang;
 
 $translations = require("lang/$lang.php");
 
-include $template_path . 'header.php';
+$exclude_footer_pages = ['account', 'characters', 'donate', 'fortune', 'vote', 'tickets', 'bag', 'changepassword', 'info', 'armory'];
+
+if (!in_array($page, $exclude_footer_pages)) {
+    include $template_path . 'header.php';
+}
 include $template_path . 'content.php';
-include $template_path . 'footer.php';
+
+if (!in_array($page, $exclude_footer_pages)) {
+    include $template_path . 'footer.php';
+}
 
 $db->close();
 ?>

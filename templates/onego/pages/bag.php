@@ -41,7 +41,7 @@ $characters = $characterManager->get_characters($user_id);
                             <?php foreach ($bag_items as $item): ?>
                                 <div class="flex justify-between">
                                     <div class="bg-white p-2 rounded shadow">
-                                        <a href='<?= $translations['wowhead_item'] ?><?= htmlspecialchars($item['id']) ?>' 
+                                        <a href='https://www.wowhead.com/wotlk/ru/item=<?= htmlspecialchars($item['id']) ?>' 
                                            data-wh-icon-size="slow" data-wh-rename-link="true" target='_blank'>
                                             <span class="tooltiptext"><?= htmlspecialchars($item['name']) ?></span>
                                         </a>

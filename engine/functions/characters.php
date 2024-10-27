@@ -104,20 +104,26 @@ class Character
         '8' => array(
             '0' => 'assets/images/race/8-0.png', '1' => 'assets/images/race/8-1.png'
         ),
+        '9' => array(
+            '0' => 'assets/images/race/9-0.png', '1' => 'assets/images/race/9-1.png'
+        ),
         '10' => array(
             '0' => 'assets/images/race/10-0.png', '1' => 'assets/images/race/10-1.png'
         ),
         '11' => array(
             '0' => 'assets/images/race/11-0.png', '1' => 'assets/images/race/11-1.png'
+        ),
+        '12' => array(
+            '0' => 'assets/images/race/12-0.png', '1' => 'assets/images/race/12-1.png'
         )
     );
 
     while ($stmt->fetch()) {
-            if (in_array($race, [1, 3, 4, 7, 11])) {
+            if (in_array($race, [1, 3, 4, 7, 11, 12])) {
                 $faction = 'assets/images/fraction/alliance.webp';
 				$faction_bg = 'assets/images/fraction/bg-alliance.png';
                 $faction_text = $translations['faction_alliance'];
-            } elseif (in_array($race, [2, 5, 6, 8, 10])) {
+            } elseif (in_array($race, [2, 5, 6, 8, 9, 10])) {
                 $faction = 'assets/images/fraction/horde.webp';
 				$faction_bg = 'assets/images/fraction/bg-horde.png';
                 $faction_text = $translations['faction_horde'];
@@ -206,8 +212,10 @@ class Character
             6 => 'tauren',
             7 => 'gnome',
             8 => 'troll',
+            9 => 'goblin',
             10 => 'blood_elf',
             11 => 'draenei',
+            12 => 'worgen',
         ];
 
         return isset($race_names[$race]) ? $race_names[$race] : 'unknown';

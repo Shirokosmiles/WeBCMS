@@ -10,7 +10,7 @@ class Online
         $this->character_connection = $config->getDatabaseConnection('characters');
     }
 
-    public function get_online_characters($limit = 10)
+    public function get_online_characters($limit = 20)
     {
         $stmt = $this->character_connection->prepare("
             SELECT 
@@ -23,7 +23,8 @@ class Online
                 c.`money`, 
                 c.`totalHonorPoints`, 
                 c.`arenaPoints`, 
-                c.`totalKills`,  
+                c.`totalKills`,
+                c.`rankPoints`,   
                 c.`online`,
                 c.`zone`,
                 (SELECT COUNT(*) FROM character_achievement WHERE guid = c.guid) AS achievement_count,
@@ -43,7 +44,7 @@ class Online
 
         $stmt->bind_param("i", $limit);
         $stmt->execute();
-        $stmt->bind_result($guid, $name, $race, $class, $gender, $level, $money, $totalHonorPoints, $arenaPoints, $totalKills, $online, $zone, $achievement_count, $guild_name);
+        $stmt->bind_result($guid, $name, $race, $class, $gender, $level, $money, $totalHonorPoints, $arenaPoints, $totalKills, $rankPoints, $online, $zone, $achievement_count, $guild_name);
         
         $characters = array();
 		
@@ -116,51 +117,6 @@ class Online
             $copper = $money % 100;
             $gender_text = ($gender == 0) ? 'Мужчина' : 'Женщина';
             $guild_text = !empty($guild_name) ? $guild_name : $translations['no_guild'];
-
-            if ($totalHonorPoints <= 0) {
-                $rank = 0; 
-            } elseif ($totalHonorPoints < 500) {
-                $rank = 1;
-            } elseif ($totalHonorPoints < 1500) {
-                $rank = 2;
-            } elseif ($totalHonorPoints < 3000) {
-                $rank = 3;
-            } elseif ($totalHonorPoints < 5000) {
-                $rank = 4;
-            } elseif ($totalHonorPoints < 7500) {
-                $rank = 5;
-            } elseif ($totalHonorPoints < 10000) {
-                $rank = 6;
-            } elseif ($totalHonorPoints < 15000) {
-                $rank = 7;
-            } elseif ($totalHonorPoints < 20000) {
-                $rank = 8;
-            } elseif ($totalHonorPoints < 30000) {
-                $rank = 9;
-            } elseif ($totalHonorPoints < 40000) {
-                $rank = 10;
-            } elseif ($totalHonorPoints < 50000) {
-                $rank = 11;
-            } elseif ($totalHonorPoints < 75000) {
-                $rank = 12;
-            } elseif ($totalHonorPoints < 100000) {
-                $rank = 13;
-            } elseif ($totalHonorPoints < 150000) {
-                $rank = 14;
-            } elseif ($totalHonorPoints < 200000) {
-                $rank = 15;
-            } elseif ($totalHonorPoints < 300000) {
-                $rank = 16;
-            } elseif ($totalHonorPoints < 350000) {
-                $rank = 17;
-            } elseif ($totalHonorPoints < 400000) {
-                $rank = 18;
-            } else {
-                $rank = 19;
-            }
-
-            $rank_title = $translations["rank_" . $rank];
-            
             $map_name = isset($mapNames[$zone]) ? $mapNames[$zone] : 'Неизвестная карта';
 
             $character = array(
@@ -187,8 +143,6 @@ class Online
                 'class_name' => $translations['class_' . strtolower($this->get_class_name($class))],
                 'race_name' => $translations['race_' . strtolower($this->get_race_name($race))],
                 'guild_name' => $guild_text,
-                'rank' => $rank,
-                'rank_title' => $rank_title,
                 'map_name' => $map_name
             );
 
@@ -197,6 +151,7 @@ class Online
 
         return $characters;
     }
+
 
     private function get_class_name($class)
     {
@@ -232,6 +187,6 @@ class Online
         ];
 
         return isset($race_names[$race]) ? $race_names[$race] : 'unknown';
-    }
+    }  
 }
 ?>

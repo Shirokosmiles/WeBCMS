@@ -8,36 +8,9 @@
     <link href="<?= $template_path ?>css/style.css" rel="stylesheet" />
     <link href="<?= $template_path ?>css/all.css" rel="stylesheet" />
     <link href="<?= $template_path ?>css/theme.css" rel="stylesheet" />
-    <script src="https://www.google.com/recaptcha/api.js" ></script>
-    <script src="../assets/js/all.js" ></script>
+    <script src="<?= $template_path ?>js/all.js" ></script>
     <script src="<?= $template_path ?>js/test.js"></script>
     <title><?= $web_title ?></title>
-	<style>
-	.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 100px;
-  background-color: rgba(40, 40, 40, 0.8);
-  border: 2px solid black;
-  color: #b3b3cc;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  position: absolute;
-  bottom: -10px; /* Adjust this value as needed */
-  margin-left: -53px; /* Center align the tooltip */
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-	</style>
 </head>
 <body class="bg-custom-dark1">
     <div class="container mx-auto">

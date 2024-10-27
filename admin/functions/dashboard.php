@@ -134,6 +134,33 @@ class Dashboard{
     }
 }
 
+public function get_gm_logs($page = 1, $limit = 10) {
+    $offset = ($page - 1) * $limit;
+    $stmt = $this->connection->prepare("SELECT * FROM account_gm_log_item ORDER BY time DESC LIMIT ?, ?");
+    $stmt->bind_param("ii", $offset, $limit);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $logs = [];
+    
+    while ($row = $result->fetch_assoc()) {
+        $logs[] = $row;
+    }
+    
+    $stmt->close();
+    return $logs;
+}
+
+public function get_gm_logs_count() {
+    $stmt = $this->connection->prepare("SELECT COUNT(*) as total FROM account_gm_log_item");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $total = $row['total'];
+    $stmt->close();
+    return $total;
+}
+
+
 }
 
 ?>

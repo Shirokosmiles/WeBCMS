@@ -46,11 +46,8 @@ if (isset($_POST['unstick'])) {
                             foreach ($characters as $character) { ?>
                                 <tr>
                                     <td class='text-center'>
-                                        <a href="?page=armory&charid=<?= $character['guid']; ?>" class="text-blue-500 hover:underline">
-                                            <span><font color="<?= $character['class_color']; ?>"><?= $character['name']; ?></font></span>
-                                        </a>
+                                        <span><font color="<?= $character['class_color']; ?>"><?= $character['name']; ?></font></span>
                                     </td>
-
                                     <td class='text-center text-white sm:block hidden'>
                                         <div class="tooltip" data-tip="<?= $character['faction_text']; ?> - <?= $character['class_name']; ?> - <?= $character['race_name']; ?>">
                                             <img class="h-5 inline" src="<?= $character['faction']; ?>" />
