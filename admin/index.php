@@ -114,13 +114,15 @@ $conn->close();
 </div>
   <!-- End Sideber -->
 <section class="home_section">
-
     <div class="topbar">
       <div class="toggle">
         <i class='bx bx-menu' id="btn"></i>
       </div>
       <div class="user_wrapper">
         <img src="../assets/img/user.jpg" alt="">
+      </div>
+      <div class="user_wrapper1">
+      <button class="c-button" id="updateButton">Обновления</button>
       </div>
     </div>
     <!-- End Top Bar -->
@@ -152,5 +154,23 @@ $conn->close();
       }
     }
   </script>
+  <script>
+    document.getElementById("updateButton").addEventListener("click", function() {
+        if (confirm("Вы уверены, что хотите обновить файлы?")) {
+            fetch('../clientUpdate.php', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ошибка при обновлении файлов.');
+            });
+        }
+    });
+</script>
+
 </body>
 </html>

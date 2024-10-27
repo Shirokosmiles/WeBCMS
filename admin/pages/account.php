@@ -44,9 +44,14 @@ $accounts = $account->get_accounts($pageNum, $perPage);
         </table>
         
       </div>
-<div class="card-inner">
+    <div class="card-inner">
                         <nav>
-        <ul class="pagination"><?php
+        <ul class="pagination">
+                            
+            
+                            
+                           
+                                        <?php
     // Calculate total number of pages
     $totalAccounts = $account->get_total_accounts();
     $totalPages = ceil($totalAccounts / $perPage);
@@ -54,9 +59,13 @@ $accounts = $account->get_accounts($pageNum, $perPage);
     // Display pagination links
     for ($i = 1; $i <= $totalPages; $i++) {
         $isActive = $i == $pageNum ? "active" : "";
-        echo "<li class='page-item $isActive'><a class='page-link' href='/admin/?page=accounts&pg=$i'>$i</a></li>";
+        echo "<li class='page-item $isActive'><a class='page-link' href='?page=accounts&pg=$i'>$i</a></li>";
     }
-    ?></ul>
+    ?>
+
+
+                                                                        
+                    </ul>
     </nav>
 
                     </div>

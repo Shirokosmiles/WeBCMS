@@ -3,7 +3,7 @@ require_once("functions/install.php");
 $install = new InstallOneGoCMS();
 
 if (isset($_POST['install'])) {
-    $install->install($_POST['web_title'], $_POST['realmlist'], $_POST['db_host'], $_POST['db_port'], $_POST['db_gameport'], $_POST['db_username'], $_POST['db_password'], $_POST['db_auth'], $_POST['db_characters'], $_POST['db_world'], $_POST['db_website'], $_POST['soap_url'], $_POST['soap_uri'], $_POST['soap_username'], $_POST['soap_password']);
+    $install->install($_POST['web_title'], $_POST['realmlist'], $_POST['db_host'], $_POST['db_port'], $_POST['db_gameport'], $_POST['db_username'], $_POST['db_password'], $_POST['db_auth'], $_POST['db_characters'], $_POST['db_website'], $_POST['soap_url'], $_POST['soap_uri'], $_POST['soap_username'], $_POST['soap_password']);
 }
 ?>
 <!DOCTYPE html>
@@ -110,6 +110,13 @@ if (isset($_POST['install'])) {
                 <div class="form-group">
                     <input type="text" class="form-control" name="realmlist" placeholder="logon.server.com" required>
                 </div>
+                <h4>Update Client</h4>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="updateDomain" placeholder="https://domain.com" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="$updateKey" placeholder="Issued by the administrator" required>
+                </div>
                 <h4>MySQL Information</h4>
                 <div class="form-group">
                     <input type="text" class="form-control" name="db_host" placeholder="Database Host: 127.0.0.1" required>
@@ -132,9 +139,6 @@ if (isset($_POST['install'])) {
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="db_characters" placeholder="Characters Database: characters" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="db_world" placeholder="World Database: world" required>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="db_website" placeholder="Website Database: website" required>
