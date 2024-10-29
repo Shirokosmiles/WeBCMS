@@ -28,12 +28,15 @@ $accounts = $account->get_accounts($pageNum, $perPage);
             <tr>
               <td>
                 <span class="img_group">
-                  <img src="../assets/img/avatar-2.jpg" alt="">
-                </span>
+                            <?php
+                            $userAccount = new Account($user['username']);
+                            ?>
+                            <img src="<?= $userAccount->get_avatar(); ?>" alt="Avatar" width="50" height="50">
+                        </span>
               </td>
               <td><?php echo $user['username']; ?></td>
               <td><?php echo $user['email']; ?></td>
-              <td><span class="badge bg_worning"><?php echo $user['last_login']; ?></span></td>
+              <td><?php echo $user['last_login']; ?></td>
               <td><?php echo $user['joindate']; ?></td>
               <td><?php echo $user['last_ip']; ?></td>
               <td><?php echo $user['bonuses']; ?></td>

@@ -37,7 +37,7 @@ class adminAccounts
                 "joindate" => $row['joindate'],
                 "last_ip" => $row['last_ip'],
                 "last_login" => $row['last_login'],
-                "bonuses" => $row['bonuses']
+                "bonuses" => $row['bonuses'],
             );
         }
         $stmt->close();

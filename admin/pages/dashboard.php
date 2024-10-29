@@ -243,7 +243,7 @@ $gm_logs = $stats->get_gm_logs($page, $limit);
     <ul>
         <?php foreach ($race_stats as $race => $count): ?>
             <li>
-                <img src="../assets/images/race/<?= $race ?>.png" alt="<?= ucfirst($race) ?>" width="50" />
+                <img src="assets/images/race/<?= $race_image ?>.png" alt="<?= ucfirst($race_image) ?>" width="50" />
                 <?= ucfirst($race) ?>: <?= $count ?>
             </li>
         <?php endforeach; ?>
@@ -253,7 +253,7 @@ $gm_logs = $stats->get_gm_logs($page, $limit);
     <ul>
         <?php foreach ($class_stats as $class => $count): ?>
             <li>
-                <img src="../assets/images/classes/<?= $class ?>.png" alt="<?= ucfirst($class) ?>" width="50" />
+                <img src="assets/images/classes/<?= array_search($class_image, $class_names) ?>.png" alt="<?= ucfirst($class_image) ?>" width="50" />
                 <?= ucfirst($class) ?>: <?= $count ?>
             </li>
         <?php endforeach; ?>
