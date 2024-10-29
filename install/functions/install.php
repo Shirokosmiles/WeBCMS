@@ -11,7 +11,7 @@ class InstallOneGoCMS
         }
     }
 
-    public function install($web_title, $realmlist, $host, $port, $db_gameport, $username, $password, $auth, $characters, $website, $soap_url, $soap_uri, $soap_username, $soap_password, $updateDomain, $updateKey)
+    public function install($web_title, $realmlist, $host, $port, $db_gameport, $username, $password, $auth, $characters, $website, $soap_url, $soap_uri, $soap_username, $soap_password)
     {
         $db = new mysqli($host, $username, $password, '', $port);
         if ($db->connect_error) {
@@ -46,10 +46,6 @@ class InstallOneGoCMS
 // Database Configuration
 \$web_title = '" . $web_title . "';
 \$realmlist = '" . $realmlist . "';
-
-// Client Update
-\$updateDomain = '" . $updateDomain . "';
-\$updateKey = '" . $updateKey . "';
 
 // Database Configuration
 \$db_host = '" . $host . "';

@@ -1,7 +1,7 @@
 <?php 
 $stats = new Dashboard();
 $template_name = $stats->get_template_name();
-
+list($race_stats, $class_stats) = $stats->get_race_class_statistics();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_template_name'])) {
     $new_template_name = $_POST['new_template_name'];
 
@@ -20,6 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lang_code'])) {
     if ($stats->update_language_status($lang_code, $new_status)) {
     }
 }
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$limit = 10;
+$total_pages = $stats->get_total_pages($limit);
+$gm_logs = $stats->get_gm_logs($page, $limit);
+
 
 ?>
 
@@ -55,7 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lang_code'])) {
     </div>
     <!-- End Card Boxs -->
 
-
+<script>const whTooltips = {colorLinks: true, iconizeLinks: false, renameLinks: false};</script>
+<script src="https://wow.zamimg.com/widgets/power.js"></script>
+<style>
+.pagination a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+</style>
     <div class="details">
       <div class="recent_project">
         <div class="card_header">
@@ -75,13 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lang_code'])) {
         </thead>
         <tbody>
             <?php 
-            $gm_logs = $stats->get_gm_logs();
             foreach ($gm_logs as $log) {
                 echo '<tr>';
                 echo '<td>' . htmlspecialchars($log['time']) . '</td>';
                 echo '<td>' . htmlspecialchars($log['player']) . '</td>';
                 echo '<td>' . htmlspecialchars($log['account']) . '</td>';
-                echo '<td>' . htmlspecialchars($log['item_guid']) . '</td>';
+                echo '<td><a href="https://www.wowhead.com/wotlk/ru/item=' . htmlspecialchars($log['item_guid']) . '" class="flex flex-row text-decoration-none has-item item-container w-full" data-wh-icon-size="small" data-wh-rename-link="true" target="_blank">' . htmlspecialchars($log['item_guid']) . '</a></td>';
                 echo '<td>' . htmlspecialchars($log['count']) . '</td>';
                 echo '<td>' . htmlspecialchars($log['target']) . '</td>';
                 echo '<td>' . htmlspecialchars($log['realmId']) . '</td>';
@@ -90,6 +102,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lang_code'])) {
             ?>
         </tbody>
     </table>
+    <div class="pagination">
+        <?php if ($page > 1): ?>
+            <a href="?page=<?= $page - 1 ?>">&laquo; Назад</a>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+            <a href="?page=<?= $i ?>" class="<?= $i == $page ? 'active' : '' ?>"><?= $i ?></a>
+        <?php endfor; ?>
+
+        <?php if ($page < $total_pages): ?>
+            <a href="?page=<?= $page + 1 ?>">Следующая &raquo;</a>
+        <?php endif; ?>
+    </div>
       </div>
     </div>
 
@@ -212,3 +237,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lang_code'])) {
         </table>
       </div>
     </div>
+
+    <div class="race-class-statistics">
+    <h2>Статистика по Расам</h2>
+    <ul>
+        <?php foreach ($race_stats as $race => $count): ?>
+            <li>
+                <img src="../assets/images/race/<?= $race ?>.png" alt="<?= ucfirst($race) ?>" width="50" />
+                <?= ucfirst($race) ?>: <?= $count ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h2>Статистика по Классам</h2>
+    <ul>
+        <?php foreach ($class_stats as $class => $count): ?>
+            <li>
+                <img src="../assets/images/classes/<?= $class ?>.png" alt="<?= ucfirst($class) ?>" width="50" />
+                <?= ucfirst($class) ?>: <?= $count ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

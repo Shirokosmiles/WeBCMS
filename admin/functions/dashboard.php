@@ -160,6 +160,64 @@ public function get_gm_logs_count() {
     return $total;
 }
 
+public function get_total_pages($limit = 10) {
+    $total_logs = $this->get_gm_logs_count();
+    return ceil($total_logs / $limit);
+}
+
+public function get_race_class_statistics() {
+    $race_stats = [];
+    $class_stats = [];
+
+    $races = [
+        1 => 'Человек',
+        2 => 'Орк',
+        3 => 'Дворф',
+        4 => 'Ночной Эльф',
+        5 => 'Нежить',
+        6 => 'Таурен',
+        7 => 'Гном',
+        8 => 'Троль',
+        9 => 'Гоблин',
+        10 => 'Эльф Крови',
+        11 => 'Дреней',
+        12 => 'Ворген',
+    ];
+
+    foreach ($races as $race_id => $race_name) {
+        $stmt = $this->characters->prepare("SELECT COUNT(*) as count FROM characters WHERE race = ?");
+        $stmt->bind_param("i", $race_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $race_stats[$race_name] = $row['count'];
+    }
+
+    $classes = [
+        1 => 'Воин',
+        2 => 'Паладин',
+        3 => 'Охотник',
+        4 => 'Разбойник',
+        5 => 'Жрец',
+        6 => 'Рыцарь Крови',
+        7 => 'Шаман',
+        8 => 'Маг',
+        9 => 'Чернокнижник',
+        11 => 'Друид',
+    ];
+
+    foreach ($classes as $class_id => $class_name) {
+        $stmt = $this->characters->prepare("SELECT COUNT(*) as count FROM characters WHERE class = ?");
+        $stmt->bind_param("i", $class_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $class_stats[$class_name] = $row['count'];
+    }
+
+    return [$race_stats, $class_stats];
+}
+
 
 }
 
