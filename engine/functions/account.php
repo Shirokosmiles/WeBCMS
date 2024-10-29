@@ -45,6 +45,62 @@ class Account
         $stmt->close();
     }
 
+    public function upload_avatar($file) {
+    $target_dir = "../uploads/avatar/";
+    $target_file = $target_dir . basename($file["name"]);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    $check = getimagesize($file["tmp_name"]);
+    if($check === false) {
+        return "Файл не является изображением.";
+    }
+
+    if ($file["size"] > 5000000) {
+        return "Извините, ваш файл слишком большой.";
+    }
+
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+        return "Извините, разрешены только файлы JPG, JPEG, PNG и GIF..";
+    }
+
+    if (file_exists($target_file)) {
+        return "Извините, файл уже существует.";
+    }
+
+    if (move_uploaded_file($file["tmp_name"], $target_file)) {
+        $this->update_avatar(basename($file["name"]));
+        return "Файл ". htmlspecialchars(basename($file["name"])) . " был загружен.";
+    } else {
+        return "Извините, при загрузке файла произошла ошибка.";
+    }
+    }
+
+    private function update_avatar($filename) {
+    $stmt = $this->website->prepare("UPDATE users SET avatar = ? WHERE account_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("si", $filename, $this->get_id());
+        $stmt->execute();
+        $stmt->close();
+    }
+    }
+
+    public function get_avatar() {
+    $stmt = $this->website->prepare("SELECT avatar FROM users WHERE account_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("i", $this->get_id());
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        
+        if ($row && !empty($row['avatar'])) {
+            return "../uploads/avatar/" . $row['avatar'];
+        }
+    }
+    return "../uploads/avatar/no-avatar.png";
+    }
+
     public function get_account_currency()
     {
         $account = $this->get_account();

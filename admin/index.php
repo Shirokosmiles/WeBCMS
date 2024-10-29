@@ -119,7 +119,7 @@ $conn->close();
         <i class='bx bx-menu' id="btn"></i>
       </div>
       <div class="user_wrapper">
-        <img src="../assets/img/user.jpg" alt="">
+        <img src="<?php echo $account->get_avatar(); ?>" alt="Аватар пользователя">
       </div>
       <div class="user_wrapper1">
       <button class="c-button" id="updateButton">Обновления</button>

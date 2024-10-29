@@ -80,7 +80,7 @@ $conn->close();
             <a href="#" class="dropdown-toggle mr-lg-n1" data-toggle="dropdown">
                 <div class="user-toggle">
                     <div class="user-avatar sm">
-                        <em class="icon ni ni-user-alt"></em>
+                        <img src="<?php echo $account->get_avatar(); ?>" alt="Аватар пользователя">
                     </div>
                 </div>
             </a>
@@ -88,14 +88,14 @@ $conn->close();
                 <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                     <div class="user-card">
                         <div class="user-avatar">
-                            <em class="icon ni ni-user-alt"></em>
+                            <img src="<?php echo $account->get_avatar(); ?>" alt="Аватар пользователя">
                         </div>
                         <div class="user-info">
                             <span class="lead-text"><?= $account->get_username(); ?></span>
                             <span class="sub-text"><?= $account->get_email(); ?></span>
                         </div>
                         <div class="user-action">
-                            <a class="btn btn-icon mr-n2" href="https://l2.wizardcp.com/cabinet/settings/profile"><em class="icon ni ni-setting"></em></a>
+                            <a class="btn btn-icon mr-n2" href=""><em class="icon ni ni-setting"></em></a>
                         </div>
                     </div>
                 </div>
