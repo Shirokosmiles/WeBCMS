@@ -18,35 +18,66 @@ if (isset($_POST['delete-submit'])) {
 
 $news = new News();
 ?>
+                                <div class="nk-block-head nk-block-head-sm">
+                                    <div class="nk-block-between">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title"><?= $translations['news'] ?></h3>
+                                            <div class="nk-block-des text-soft">
+                                                <p><?= $translations['edit_news'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    <div class="nk-block">
+        <div class="row g-gs">
+            <div class="col-12">
+                <div class="card card-bordered">
+                    <div class="card-inner">
+                        <div class="card-title-group">
+                            <h5 class="card-title">
+                                <a href="/admin/?page=newsadd" class="btn btn-sm btn-primary">
+                                    <span class="d-none d-sm-inline" id="add-news-btn"><?= $translations['add_news'] ?></span>
+                                </a>
+                            </h5>
+                            <div class="card-tools d-none d-md-inline">
 
-    <div class="details">
-      <div class="recent_project">
-        <div class="card_header">
-          <h2><?= $translations['news'] ?>  <a href="/admin/?page=newsadd" class="c-button">Добавить запись</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-inner p-0 border-top">
+                        <div class="nk-tb-list nk-tb-orders">
+                            <?php foreach ($news->get_news(1, 10) as $newsItem) : ?>
+                                <div class="nk-tb-item">
+                                <div class="nk-tb-col"><span class="tb-lead"><?php echo $newsItem['title']; ?></span></div>
+                                <div class="nk-tb-col">
+                                    <span class="tb-lead"><a href="" target="_blank"><?php echo $newsItem['content']; ?></a></span>
+                                </div>
+                                <div class="nk-tb-col tb-col-md">
+                                    <span class="tb-sub">
+                                        <?php echo $newsItem['created_at']; ?>
+                                    </span>
+                                </div>
+                                <div class="nk-tb-col nk-tb-col-action">
+                                    <div class="dropdown">
+                                        <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown">
+                                            <em class="icon ni ni-more-h"></em>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <ul class="link-list-plain">
+                                                <form method="POST" style="display:inline;">
+                                                    <input type="hidden" name="news-id" value="<?php echo $newsItem['id']; ?>">
+                                                    <li><button type="submit" class="text-danger" name="delete-submit" onclick="return confirm('Вы уверены, что хотите удалить эту новость??')"><?= $translations['del_news'] ?></button></li>
+                                                </form>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <td><?= $translations['username'] ?></td>
-              <td><?= $translations['email'] ?></td>
-              <td><?= $translations['joindate'] ?></td>
-              <td><?= $translations['last_login'] ?></td>
-              <td><?= $translations['last_ip'] ?></td>
-            </tr>
-          </thead>
-<?php foreach ($news->get_news(1, 10) as $newsItem) : ?> 
-          <tbody> 
-            <tr> 
-             <td><?php echo mb_substr($newsItem['title'], 0, 50) . (strlen($newsItem['title']) > 50 ? '...' : ''); ?></td> 
-             <td><?php echo mb_substr($newsItem['content'], 0, 50) . (strlen($newsItem['content']) > 50 ? '...' : ''); ?></td> 
-             <td><span class="badge bg_worning"><?php echo $newsItem['created_at']; ?></span></td> 
-             <td></td> 
-             <td><form method="POST" style="display:inline;"><input type="hidden" name="news-id" value="<?php echo $newsItem['id']; ?>">
-                <button type="submit" class="c-button" name="delete-submit" onclick="return confirm('Вы уверены, что хотите удалить эту новость??')">Удалить</button>
-            </form></td> 
-           </tr> 
-         </tbody> 
-          <?php endforeach; ?>
-        </table>
       </div>
-    </div>
+    <!-- .nk-block -->

@@ -29,233 +29,79 @@ $gm_logs = $stats->get_gm_logs($page, $limit);
 
 ?>
 
-    <div class="card-boxes">
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers"><?php echo $stats->total_accounts(); ?></div>
-          <div class="box_topic"><?= $translations['t_acc'] ?></div>
-        </div>
-        <i class='bx bx-user'></i>
-      </div>
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers"><?php echo $stats->total_characters(); ?></div>
-          <div class="box_topic"><?= $translations['t_char'] ?></div>
-        </div>
-        <i class='bx bxs-cart-add'></i>
-      </div>
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers"><?php echo $stats->premiun_accounts(); ?></div>
-          <div class="box_topic"><?= $translations['t_prem'] ?></div>
-        </div>
-        <i class='bx bx-cart'></i>
-      </div>
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers"><?php echo $stats->total_tickets(); ?></div>
-          <div class="box_topic"><?= $translations['t_tick'] ?></div>
-        </div>
-        <i class='bx bxs-cart-download'></i>
-      </div>
-    </div>
-    <!-- End Card Boxs -->
+                                <div class="nk-block-head nk-block-head-sm">
+                                    <div class="nk-block-between">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title"><?= $translations['general'] ?></h3>
+                                            <div class="nk-block-des text-soft">
+                                                <p><?= $translations['desc'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-<script>const whTooltips = {colorLinks: true, iconizeLinks: false, renameLinks: false};</script>
-<script src="https://wow.zamimg.com/widgets/power.js"></script>
+
+<!-- <script>const whTooltips = {colorLinks: true, iconizeLinks: false, renameLinks: false};</script>
+<script src="https://wow.zamimg.com/widgets/power.js"></script> -->
+<script src="https://wow.net.kg/tooltip/tooltip.js"></script>
 <style>
 .pagination a.active {
     font-weight: bold;
     text-decoration: underline;
 }
 </style>
-    <div class="details">
-      <div class="recent_project">
-        <div class="card_header">
-          <h2>ГМ - Логи</h2>
-        </div>
-        <table>
-        <thead>
-            <tr>
-                <td>Время</td>
-                <td>Игрок</td>
-                <td>Аккаунт</td>
-                <td>GUID предмета</td>
-                <td>Количество</td>
-                <td>Цель</td>
-                <td>Realm ID</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
+
+ <!-- .nk-block -->
+            <div class="col-12">
+                <div class="card card-bordered">
+
+                    <div class="card-inner p-0 border-top">
+                        <div class="nk-tb-list nk-tb-ulist is-compact">
+                            <div class="nk-tb-item nk-tb-head">
+                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Время</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">Игрок</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">Аккаунт</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">GUID предмета</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">Количество</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">Цель</span></div>
+                                <div class="nk-tb-col"><span class="sub-text">Realm ID</span></div>                                
+                            </div>
+                            <!-- .nk-tb-item -->
+                            
+                            <?php 
             foreach ($gm_logs as $log) {
-                echo '<tr>';
-                echo '<td>' . htmlspecialchars($log['time']) . '</td>';
-                echo '<td>' . htmlspecialchars($log['player']) . '</td>';
-                echo '<td>' . htmlspecialchars($log['account']) . '</td>';
-                echo '<td><a href="https://www.wowhead.com/wotlk/ru/item=' . htmlspecialchars($log['item_guid']) . '" class="flex flex-row text-decoration-none has-item item-container w-full" data-wh-icon-size="small" data-wh-rename-link="true" target="_blank">' . htmlspecialchars($log['item_guid']) . '</a></td>';
-                echo '<td>' . htmlspecialchars($log['count']) . '</td>';
-                echo '<td>' . htmlspecialchars($log['target']) . '</td>';
-                echo '<td>' . htmlspecialchars($log['realmId']) . '</td>';
-                echo '</tr>';
+                echo '<div class="nk-tb-item">';
+                echo '<div class="nk-tb-col tb-col-md"><span>' . htmlspecialchars($log['time']) . '</span></div>';
+                echo '<div class="nk-tb-col"><span>' . htmlspecialchars($log['player']) . '</span></div>';
+                echo '<div class="nk-tb-col"><span>' . htmlspecialchars($log['account']) . '</span></div>';
+                echo '<div class="nk-tb-col"><span><a href="" data-entry="' . htmlspecialchars($log['item_guid']) . '" target="_blank">' . htmlspecialchars($log['item_guid']) . '</a></span></div>';
+              //  echo '<div class="nk-tb-col"><span><a href="https://www.wowhead.com/wotlk/ru/item=' . htmlspecialchars($log['item_guid']) . '" class="flex flex-row text-decoration-none has-item item-container w-full" data-wh-icon-size="small" data-wh-rename-link="true" target="_blank">' . htmlspecialchars($log['item_guid']) . '</a></span></div>';
+                echo '<div class="nk-tb-col"><span>' . htmlspecialchars($log['count']) . '</span></div>';
+                echo '<div class="nk-tb-col"><span>' . htmlspecialchars($log['target']) . '</span></div>';
+                echo '<div class="nk-tb-col"><span>' . htmlspecialchars($log['realmId']) . '</span></div>';
+                echo '</div>';
             }
             ?>
-        </tbody>
-    </table>
-    <div class="pagination">
+            </div>
+            <div class="card-inner">
+                        <nav>
+        <ul class="pagination">
         <?php if ($page > 1): ?>
-            <a href="?page=<?= $page - 1 ?>">&laquo; Назад</a>
+          <li class='page-item'><a href="?page=<?= $page - 1 ?>" class='page-link'>&laquo; Назад</a></li>
         <?php endif; ?>
 
         <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-            <a href="?page=<?= $i ?>" class="<?= $i == $page ? 'active' : '' ?>"><?= $i ?></a>
+          <li class='page-item'><a href="?page=<?= $i ?>" class='page-link'><?= $i ?></a></li>
         <?php endfor; ?>
 
         <?php if ($page < $total_pages): ?>
-            <a href="?page=<?= $page + 1 ?>">Следующая &raquo;</a>
+          <li class='page-item'><a href="?page=<?= $page + 1 ?>" class='page-link'>Следующая &raquo;</a></li>
         <?php endif; ?>
-    </div>
-      </div>
-    </div>
+        </ul>
+                      </nav>
 
-
-    <div class="details1">
-      <div class="recent_project">
-        <div class="card_header">
-          <h2>Логи Голосования</h2>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <td>Project Name</td>
-              <td>Hours</td>
-              <td>Priority</td>
-              <td>Members</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dropbox Design System</td>
-              <td>34</td>
-              <td>
-                <span class="badge bg_worning">
-                  Meduim
-                </span>
-              </td>
-              <td>
-                <span class="img_group">
-                  <img src="../assets/../assets/img/avatar-2.jpg" alt="">
-                </span>
-                <span class="img_group">
-                  <img src="../assets/../assets/img/avatar-3.jpg" alt="">
-                </span>
-                <span class="img_group">
-                  <img src="../assets/../assets/img/avatar-4.jpg" alt="">
-                </span>
-                <span class="img_group">
-                  <span class="initial">+5</span>
-                </span>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-      <div class="recent_customers">
-        <div class="card_header">
-          <h2>Новые Пользователи</h2>
-        </div>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-2.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Willams Harris</h4>
-                <span>Willams@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-3.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Vanessa Tucker</h4>
-                <span>Vanessa@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-4.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Sharon Lessma</h4>
-                <span>Sharon@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-5.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Christina Mason</h4>
-                <span>Christina@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-2.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Willams Harris</h4>
-                <span>Willams@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="../assets/img/avatar-3.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Sharon Lessma</h4>
-                <span>Willams@gmail.com</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="race-class-statistics">
-    <h2>Статистика по Расам</h2>
-    <ul>
-        <?php foreach ($race_stats as $race => $count): ?>
-            <li>
-                <img src="assets/images/race/<?= $race_image ?>.png" alt="<?= ucfirst($race_image) ?>" width="50" />
-                <?= ucfirst($race) ?>: <?= $count ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-
-    <h2>Статистика по Классам</h2>
-    <ul>
-        <?php foreach ($class_stats as $class => $count): ?>
-            <li>
-                <img src="assets/images/classes/<?= array_search($class_image, $class_names) ?>.png" alt="<?= ucfirst($class_image) ?>" width="50" />
-                <?= ucfirst($class) ?>: <?= $count ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+<!-- .nk-block -->

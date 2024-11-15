@@ -262,6 +262,50 @@ label {
     margin-bottom: 16px
 }
 
+button {
+    border-radius: 0
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0
+}
+
+button, input {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+[role=button] {
+    cursor: pointer
+}
+
+select {
+    word-wrap: normal
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
 
 input[type=checkbox], input[type=radio] {
     box-sizing: border-box;
@@ -296,6 +340,10 @@ progress {
     vertical-align: baseline
 }
 
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
 [type=search] {
     -webkit-appearance: none;
     outline-offset: -2px
@@ -303,6 +351,11 @@ progress {
 
 [type=search]::-webkit-search-decoration {
     -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
 }
 
 output {
@@ -3281,6 +3334,10 @@ a.btn.disabled, fieldset:disabled a.btn {
     margin-top: .5rem
 }
 
+input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].btn-block {
+    width: 100%
+}
+
 .fade {
     transition: opacity .15s linear
 }
@@ -5940,6 +5997,12 @@ a.badge-lighter.focus, a.badge-lighter:focus {
 
 .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
     opacity: .75
+}
+
+button.close {
+    background-color: transparent;
+    border: 0;
+    padding: 0
 }
 
 a.close.disabled {
@@ -29350,6 +29413,7 @@ h6 .badge {
 
 .user-avatar, [class^=user-avatar]:not([class*=-group]) {
     align-items: center;
+    background: #de4f16;
     border-radius: 50%;
     color: #fff;
     display: flex;
@@ -29385,6 +29449,7 @@ h6 .badge {
 
 .user-avatar .edit, [class^=user-avatar]:not([class*=-group]) .edit {
     align-items: center;
+    background-color: rgba(30, 30, 30, .5);
     border-radius: 50%;
     bottom: 0;
     color: #fff;
@@ -41189,7 +41254,7 @@ body.dark-mode.nk-body.ui-shady, body.dark-mode.nk-body.ui-softy {
     display: flex;
     justify-content: space-between;
     margin-left: 235px;
-    width: 60px;
+    width: 120px;
 }
 .languages__item.active {
     border: 2px solid #7e371a;
@@ -41197,23 +41262,31 @@ body.dark-mode.nk-body.ui-shady, body.dark-mode.nk-body.ui-softy {
     width: 28px;
 }
 .languages__item.en {
-    background-image: url(../../assets/images/en.svg);
+    background-image: url(../../img/icons/en.svg);
 }
 .languages__item {
-    border-radius: 30%;
+    border-radius: 50%;
     height: 25px;
     transition: all .3s;
     width: 25px;
 }
 .languages__item.ru {
-    background-image: url(../../assets/images/ru.svg);
+    background-image: url(../../img/icons/ru.svg);
+}
+.languages__item.br {
+    background-image: url(../../img/icons/br.png);
+    background-size: 25px;
+}
+.languages__item.es {
+    background-image: url(../../img/icons/es.png);
+    background-size: 25px;
 }
 
 .languages__item:not(.active) {
     opacity: .75;
 }
 .lang-checkbox {
-    margin-right: 2px;
+    margin-right: 10px;
 }
 /* */
 
